@@ -99,7 +99,7 @@ var Kilix = {
                     if($(this).hasClass('categories')){
                         var color = Kilix.colors[$(this).data('color')];
                         Kilix.changeXColor($('#logo svg polygon'), color);
-                        $('.menu').css('box-shadow', color+ ' 0px 3px 1px, rgba(0, 0, 0, 0.0470588) 0px 18px 1px');
+                        $('.menu').css('box-shadow', color+ ' 0px 3px 0px, rgba(0, 0, 0, 0.0470588) 0px 18px 0px');
                     }
                 }
             },
@@ -113,7 +113,7 @@ var Kilix = {
                     if($(this).hasClass('categories')){
                         var color = Kilix.colors[$(this).data('color')];
                         Kilix.changeXColor($('#logo svg polygon'), color);
-                        $('.menu').css('box-shadow', color+ ' 0px 3px 1px, rgba(0, 0, 0, 0.0470588) 0px 18px 1px');
+                        $('.menu').css('box-shadow', color+ ' 0px 3px 0px, rgba(0, 0, 0, 0.0470588) 0px 18px 0px');
                     }
                     else{
                         Kilix.changeXColor($('#logo svg polygon'), 'none'); 
@@ -293,12 +293,12 @@ var Kilix = {
                 scrollTop: pageFirst.parent().offset().top - $('.menu').height()
             }, 400, 'easeOutQuint');
 
-            pageTwo.find('detailled-wrapper').scrollTop(0);
+            pageTwo.find('.detailled-wrapper').scrollTop(0);
             
             //pageTwo.find('footer').css('position','absolute').css('position','fixed'); //fixing moz bug ?
 
             pageTwo.find('.inception-detailled-wrapper').css({
-                marginTop:'0rem'
+                marginTop:$(window).height() - $('.menu').height()
             });
             
             $('.detailled-menu h2').html(currentHeader.find('h1').html());
@@ -322,9 +322,9 @@ var Kilix = {
                     pageTwo.removeClass(outClass);
 
 
-                    pageTwo.find('.inception-detailled-wrapper').transition({
+                    pageTwo.find('.inception-detailled-wrapper').animate({
                         marginTop:'40rem',
-                    },800, 'easeInOutQuint');
+                    },800, 'easeInOutCirc');
                 });
                 
                 $('body').css('overflow','hidden');

@@ -82,7 +82,7 @@ var Kilix = {
                     if($(this).hasClass('categories')){
                         var color = Kilix.colors[$(this).data('color')];
                         Kilix.changeXColor($('#logo svg polygon'), color);
-                        $('.menu').css('box-shadow', color+ ' 0px 3px 1px, rgba(0, 0, 0, 0.0470588) 0px 18px 1px');
+                        $('.menu').css('box-shadow', color+ ' 0px 3px 0px, rgba(0, 0, 0, 0.0470588) 0px 18px 0px');
                     }
                 }
             },
@@ -96,7 +96,7 @@ var Kilix = {
                     if($(this).hasClass('categories')){
                         var color = Kilix.colors[$(this).data('color')];
                         Kilix.changeXColor($('#logo svg polygon'), color);
-                        $('.menu').css('box-shadow', color+ ' 0px 3px 1px, rgba(0, 0, 0, 0.0470588) 0px 18px 1px');
+                        $('.menu').css('box-shadow', color+ ' 0px 3px 0px, rgba(0, 0, 0, 0.0470588) 0px 18px 0px');
                     }
                     else{
                         Kilix.changeXColor($('#logo svg polygon'), 'none'); 

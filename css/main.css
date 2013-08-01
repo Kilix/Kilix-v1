@@ -463,7 +463,7 @@ section.body-wrapper {
 .menu.fixed {
   position: fixed;
   z-index: 1000;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 6px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.1), 0 6px 0px rgba(0, 0, 0, 0.05);
 }
 
 .menu .unfold,
@@ -911,7 +911,7 @@ section#about .devices {
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  margin-top: 20rem;
+  margin-top: 10rem;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -932,7 +932,7 @@ section#about .item-container {
   padding: 10rem 0;
   background: #f7f7f7;
   background: url('../img/black_lozenge.png');
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 -10px 1px rgba(0, 0, 0, 0.08), 0 -1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.1), inset 0 -10px 0px rgba(0, 0, 0, 0.08), 0 -1px 0px rgba(0, 0, 0, 0.15);
 }
 
 section#about .item-container article {
@@ -1225,6 +1225,7 @@ section.categories header .svg-container svg {
 
   section.categories header h1 {
     font-size: 5rem;
+    display: block!important;
   }
 
   section.categories header h1:before {
@@ -1330,22 +1331,6 @@ section.categories a.discover {
   height: 5.5rem;
   width: 15rem;
   text-align: left;
-  /*background: @col1;
-        font-size: 2.2rem;
-        color: white;
-        padding: 1rem 0rem;
-        font-family: Open sans;
-        font-weight: 700;
-        letter-spacing: 0.1rem;
-        margin-top: 7rem;
-        display: inline-block;
-        transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-        border: 6px solid @col1;
-        position: relative;
-        overflow: hidden;
-        width: 25rem;
-        height: 7rem;
-        text-transform: uppercase;*/
 }
 
 section.categories a.discover span {
@@ -1438,7 +1423,7 @@ section.categories .detailled-content {
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  background: url('../img/black_lozenge.png');
+  background: #202020;
 }
 
 section.categories .detailled-content .detailled-wrapper {
@@ -1459,14 +1444,21 @@ section.categories .detailled-content .detailled-wrapper header {
 
 section.categories .detailled-content .detailled-wrapper header h1 {
   color: #e63429;
+  display: none;
 }
 
 section.categories .detailled-content .detailled-wrapper header h1:before {
   background: #e63429;
 }
 
+section.categories .detailled-content .detailled-wrapper header .svg-container {
+  height: auto;
+}
+
 section.categories .detailled-content .detailled-wrapper header .svg-container svg {
   fill: #e63429;
+  width: 18rem;
+  height: 30rem;
 }
 
 section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper {
@@ -1515,7 +1507,6 @@ section.categories .detailled-content .detailled-wrapper .inception-detailled-wr
   line-height: 3.3rem;
   margin-bottom: 14rem;
   margin-top: 3rem;
-  padding: 0;
   font-weight: 300;
 }
 
@@ -1573,9 +1564,9 @@ section.categories .detailled-content .detailled-wrapper footer {
 }
 
 section.categories .detailled-content .detailled-wrapper footer a.undiscover {
-  background: #e63429;
+  background: transparent;
+  color: #e63429;
   font-size: 2.4rem;
-  color: #FFF;
   padding: 1rem 0rem;
   margin-top: 8rem;
   display: inline-block;
@@ -1595,7 +1586,6 @@ section.categories .detailled-content .detailled-wrapper footer a.undiscover asi
 
 section.categories .detailled-content .detailled-wrapper footer a.undiscover:hover {
   background: transparent;
-  color: #e63429;
   font-weight: '400';
 }
 
@@ -1690,6 +1680,10 @@ section.categories.historique header .svg-container svg {
   bottom: 1rem;
 }
 
+section.categories.historique .detailled-content .detailled-wrapper header .svg-container svg {
+  width: 14rem;
+}
+
 section.categories.historique a.discover {
   color: #fab400;
   border-color: #fab400;
@@ -1725,7 +1719,8 @@ section.categories.historique .detailled-content .detailled-wrapper .inception-d
 }
 
 section.categories.historique .detailled-content .detailled-wrapper footer a.undiscover {
-  background: #fab400;
+  background: transparent;
+  color: #fab400;
   border-color: #fab400;
 }
 
@@ -1764,6 +1759,10 @@ section.categories.expertise header .svg-container svg {
   bottom: 1rem;
 }
 
+section.categories.expertise .detailled-content .detailled-wrapper header .svg-container svg {
+  width: 14rem;
+}
+
 section.categories.expertise a.discover {
   color: #009884;
   border-color: #009884;
@@ -1799,7 +1798,8 @@ section.categories.expertise .detailled-content .detailled-wrapper .inception-de
 }
 
 section.categories.expertise .detailled-content .detailled-wrapper footer a.undiscover {
-  background: #009884;
+  background: transparent;
+  color: #009884;
   border-color: #009884;
 }
 
@@ -1982,7 +1982,7 @@ section.categories.equipe .team-container .figure-wrapper aside:after {
   color: white;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  content: "\e00d";
+  content: "r";
   left: 120%;
   top: 0;
   -webkit-animation-delay: 0.5s;
