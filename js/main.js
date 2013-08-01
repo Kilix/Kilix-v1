@@ -34,7 +34,7 @@ var Kilix = {
         
         console.log(window.matchMedia("only screen and (max-width: 768px)").matches+" hu");
         var isWebkit = 'webkitRequestAnimationFrame' in window;
-        //if(isWebkit){
+        if(isWebkit){
             /* --- INIT CANVAS --- */
             createCanvasIn('container',             '#ffffff',          '#989898',          '#555555',  '#ffffff',          18,     9,      0.8,        0.1);
             createCanvasIn('vision-delaunay',       Kilix.colors.col1,  Kilix.colors.col1,  '#555555',  '#ffffff',          18,     7,      0.8,        0.1);
@@ -42,7 +42,7 @@ var Kilix = {
             createCanvasIn('expertise-delaunay',    Kilix.colors.col3,  Kilix.colors.col3,  '#555555',  '#3c3c3c',          18,     7,      0.8,        0.4);
             createCanvasIn('equipe-delaunay',       Kilix.colors.col4,  Kilix.colors.col4,  '#555555',  '#3c3c3c',          18,     7,      0.8,        0.4);
             createCanvasIn('references-delaunay',   Kilix.colors.col5,  Kilix.colors.col5,  '#555555',  '#3c3c3c',          18,     7,      0.8,        0.4);
-        //}
+        }
     },
     resize: function(){
         $('#home').width($(window).width());

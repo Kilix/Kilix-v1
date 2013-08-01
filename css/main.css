@@ -62,6 +62,7 @@ textarea {
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+  font-size: 35px;
 }
 
 /* ==========================================================================
@@ -197,9 +198,9 @@ body.push-right .menu {
 @media only screen and (min-width: 768px) {
   body.push-right .body-wrapper,
   body.push-right .menu {
-    -webkit-transform: translateX(-30%);
-    -ms-transform: translateX(-30%);
-    transform: translateX(-30%);
+    -webkit-transform: translateX(-45rem);
+    -ms-transform: translateX(-45rem);
+    transform: translateX(-45rem);
   }
 }
 
@@ -585,7 +586,7 @@ nav.mobile-nav .mobile-close {
 
 @media only screen and (min-width: 768px) {
   .contact-info {
-    width: 30%;
+    width: 45rem;
   }
 
   .contact-info h4 {
@@ -1502,7 +1503,7 @@ section.categories .detailled-content .detailled-wrapper .inception-detailled-wr
   height: 21px;
   left: 50%;
   top: -8rem;
-  background: rgba(0, 0, 0, 0) url(http://moresleep.net/assets/img/svg/zikzak-line.svg) bottom center no-repeat;
+  background: rgba(0, 0, 0, 0) url(../img/separator.svg) bottom center no-repeat;
   background-size: 58px 12px;
 }
 
