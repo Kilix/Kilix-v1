@@ -122,37 +122,7 @@ textarea {
     font-style: normal;
 }
 
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 800;
-  src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/EInbV5DfGHOiMmvb1Xr-hnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-}
-
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 
 
 
@@ -796,9 +766,10 @@ section#home{
         width: 100%;
         
         a{
-            .font-size(6.5);
+            .font-size(4.5);
             font-weight:bold;
             color:@gris1;
+            transition: color  0.5s;
             
             &:hover{
                 color:@gris2;
@@ -821,7 +792,8 @@ section#about{
             text-transform: uppercase;
             .font-size(6);
             margin-bottom: 0;
-            
+            font-family: Lato;
+
             @media only screen and (max-width: 768px){
                 .font-size(3);
             }
@@ -1027,7 +999,6 @@ section.categories{
 
     article.content{
         position: relative;
-        overflow: hidden;
     }
     section.but-wait-there-is-more{    
         display: none;
@@ -1036,9 +1007,6 @@ section.categories{
         transform-style: preserve-3d; 
         position: relative;
    
-    }
-    section.but-wait{    
-        margin-top:15rem;
     }   
     section.current{
         display: block;
@@ -1046,7 +1014,7 @@ section.categories{
     }
     header{
         position: relative;
-        padding: 10rem 0 5rem 0;
+        padding-top: 10rem;
         transition: background 1s;
         canvas{
             position: absolute;
@@ -1066,26 +1034,7 @@ section.categories{
             // letter-spacing: 1rem;
             transition: color 1s;
             position: relative;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 6px 1px rgba(0, 0, 0, 0.08);
             z-index: 1;
-            &:before{
-                content: " ";
-                position: absolute;
-                width: 20rem;
-                margin-left: -10rem;
-                height: 0.7rem;
-                left: 50%;
-                bottom: 13rem;
-                background: @col1;
-                transition: background 1s, width 0.3s cubic-bezier(.70, .54, 0, 1);
-                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 15px 1px rgba(0, 0, 0, 0.08);
-            }
-            
-            &.before-0{
-                &:before{
-                    width: 0;
-                }
-            }
         }
         
         .svg-container{
@@ -1096,7 +1045,7 @@ section.categories{
             svg{
                 width: 13rem;
                 height: 13rem;
-                fill: @col1;
+                fill: rgba(0,0,0,.08);
                 transition: fill 1s;
                 position: relative;
                 -webkit-filter: drop-shadow(0 15px 0px rgba(0, 0, 0, 0.08));
@@ -1127,7 +1076,8 @@ section.categories{
         font-family: 'Aleo';
         transition: color 1s;
         position: relative;
-        
+        padding-top: 10rem;
+
         @media only screen and (max-width: 1440px){
             font-size: 4.2rem;
             line-height: 6.5rem;
@@ -1150,25 +1100,25 @@ section.categories{
         &:before{
             content: "\201C";
             left: -7rem;
-            top: 3rem;
+            top: 10rem;
         }
         @media only screen and (max-width: 1024px){
             font-size: 5em;
             line-height: 6rem;
             
         }
-        @media only screen and (min-width: 768px){
-            padding:0;
-        }
         @media only screen and (max-width: 768px){
             font-size: 3.4em;
             line-height: 5rem;
+        }
+        @media only screen and (min-width: 768px){
+            padding-left: 0;
+            padding-right: 0;
         }
         
     }
     .text-container{
         .font-size(2.2);
-        color:@gris1;
         margin-top: 5rem;
         
         @media only screen and (min-width: 768px){
@@ -1181,20 +1131,22 @@ section.categories{
         
     }
     a.discover{
-        font-size: 3rem;
-        color: #fff;
-        padding: 1rem 0rem;
-        font-weight: 600;
-        letter-spacing: 0.1rem;
-        margin: 7rem 0;
+        font-size: 2.3rem;
+        color: #FFF;
+        font-weight: 100;
+        letter-spacing: .1rem;
+        margin: 7rem 0 15rem;
         display: inline-block;
-        transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-        border-bottom: 3px solid #fff;
+        transition: .3s cubic-bezier(0.175,.885,.32,1.275) all, 1s border;
+        border: 1px solid rgba(255,255,255,0.3);
         position: relative;
         overflow: hidden;
-        height: 5.5rem;
-        width:15rem;
-        text-align:left;
+        height: 4.5rem;
+        width: 16rem;
+        text-align: left;
+        padding-left: 2rem;
+        border-radius: 6px;
+        line-height: 4rem;
         
         span{
             transition: color 0.3s;
@@ -1207,6 +1159,7 @@ section.categories{
         &:hover{
             width: 18rem;
             font-weight: '400';
+            border-color: rgba(255,255,255,1);
             &:after{
                 left: 85%;
             }
@@ -1226,7 +1179,7 @@ section.categories{
             height: 100%;
             height: 100%;
             font-size: 65%;
-            line-height:7rem;
+            line-height:4.5rem;
             color: #fff;
             transition: all 0.5s;
             content: "r";
@@ -1237,7 +1190,6 @@ section.categories{
             width: 6rem;
             height: 6rem;
             border-radius: 50%;
-            background: #fff;
             &:after{
                 opacity:0!important;
             }
@@ -1313,7 +1265,7 @@ section.categories{
                 padding-bottom:0;
                 z-index: 1;
                 position: relative;
-                box-shadow: 0 -1px 0px #6d6d6d, 0 -2px 0px #1a1a1a,0 1px 1px rgba(0, 0, 0, 0.1), 0 14px 1px rgba(0, 0, 0, 0.08);
+                box-shadow: 0 -1px 0 rgba(78, 78, 78, 0.28),0 1px 1px rgba(0, 0, 0, 0.1),0 14px 1px rgba(0, 0, 0, 0.08);
                 h2,h3{
                     font-size: 4.5rem;
                     font-style:normal;
@@ -1454,7 +1406,6 @@ section.categories{
     }
     
     header{background: @col1;}
-    >header .svg-container svg{fill: white!important;}
     >header h1{color: white!important;}
     >header h1:before{
         background: white!important;
@@ -1470,6 +1421,11 @@ section.categories{
     }
     &.vision{
         box-shadow:0 -1px 0px #6D6D6D, 0 -2px 0px #1A1A1A;
+
+        header .svg-container svg {
+            width: 16rem;
+            height: 16rem;
+        }
     }
     &.historique{
         background: @col2;
@@ -1481,7 +1437,7 @@ section.categories{
             }
         }
         .punch-line{
-            font-size: 4.5rem;
+            font-size: 4.3rem;
             line-height: 7rem;
             
             @media only screen and (max-width: 1024px){
@@ -1490,7 +1446,7 @@ section.categories{
             }
         }
         
-        .detailled-content .detailled-wrapper header .svg-container svg, header .svg-container svg{
+        .detailled-content .detailled-wrapper header .svg-container svg{
             fill: @col2;
             width: 10rem;
             bottom: 1rem;
@@ -1547,7 +1503,7 @@ section.categories{
             }
         }
         
-        .detailled-content .detailled-wrapper header .svg-container svg, header .svg-container svg{
+        .detailled-content .detailled-wrapper header .svg-container svg{
             fill: @col3;
             width: 10rem;
             bottom: 1rem;
@@ -1598,7 +1554,6 @@ section.categories{
             }
         }
         svg{
-            fill: @col4;
             width: 8rem;
         }
         .text-container{
@@ -1741,14 +1696,14 @@ section.categories{
                 text-transform: uppercase;
                 margin-top: 3rem;
                 margin-bottom: 0;
-                color: rgb(104, 104, 104);
+                color: #fff;
                 transition: color 0.3s;
             }
             h4{
                 margin: 0;
                 font-family: 'Aleo';
                 font-size: 2rem;
-                color: rgb(155, 155, 155);
+                color: #fff;
             }
             
             @media only screen and (min-width: 768px){
@@ -1757,7 +1712,7 @@ section.categories{
                         opacity:0.2;
                     }
                     h3{
-                        color:  @col4;
+                        color:  #222;
                     }
                     aside{
                         transform: translateY(0);
@@ -1782,7 +1737,7 @@ section.categories{
             }
         }
         
-        .detailled-content .detailled-wrapper header .svg-container svg, header .svg-container svg{
+        .detailled-content .detailled-wrapper header .svg-container svg{
             fill: @col5;;
             bottom: -2rem;
         }

@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
 /* ==========================================================================
    HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
    ========================================================================== */
@@ -99,41 +101,6 @@ textarea {
   src: url('../css/fonts/icomoon-webfont.eot?#iefix') format('embedded-opentype'), url('../css/fonts/icomoon-webfont.woff') format('woff'), url('../css/fonts/icomoon-webfont.ttf') format('truetype'), url('../css/fonts/icomoon-webfont.svg#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 800;
-  src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/EInbV5DfGHOiMmvb1Xr-hnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
 }
 
 /* ==========================================================================
@@ -829,10 +796,12 @@ section#home footer {
 }
 
 section#home footer a {
-  font-size: 65px;
-  font-size: 6.5rem;
+  font-size: 45px;
+  font-size: 4.5rem;
   font-weight: bold;
   color: #b0b0b0;
+  -webkit-transition: color  0.5s;
+  transition: color  0.5s;
 }
 
 section#home footer a:hover {
@@ -860,6 +829,7 @@ section#about header h1 {
   font-size: 60px;
   font-size: 6rem;
   margin-bottom: 0;
+  font-family: Lato;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1111,7 +1081,6 @@ section.categories {
 
 section.categories article.content {
   position: relative;
-  overflow: hidden;
 }
 
 section.categories section.but-wait-there-is-more {
@@ -1128,10 +1097,6 @@ section.categories section.but-wait-there-is-more {
   position: relative;
 }
 
-section.categories section.but-wait {
-  margin-top: 15rem;
-}
-
 section.categories section.current {
   display: block;
   z-index: 1;
@@ -1139,7 +1104,7 @@ section.categories section.current {
 
 section.categories header {
   position: relative;
-  padding: 10rem 0 5rem 0;
+  padding-top: 10rem;
   -webkit-transition: background 1s;
   transition: background 1s;
 }
@@ -1161,26 +1126,7 @@ section.categories header h1 {
   -webkit-transition: color 1s;
   transition: color 1s;
   position: relative;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 6px 1px rgba(0, 0, 0, 0.08);
   z-index: 1;
-}
-
-section.categories header h1:before {
-  content: " ";
-  position: absolute;
-  width: 20rem;
-  margin-left: -10rem;
-  height: 0.7rem;
-  left: 50%;
-  bottom: 13rem;
-  background: #e63429;
-  -webkit-transition: background 1s, width 0.3s cubic-bezier(0.7, 0.54, 0, 1);
-  transition: background 1s, width 0.3s cubic-bezier(0.7, 0.54, 0, 1);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 15px 1px rgba(0, 0, 0, 0.08);
-}
-
-section.categories header h1.before-0:before {
-  width: 0;
 }
 
 section.categories header .svg-container {
@@ -1193,7 +1139,7 @@ section.categories header .svg-container {
 section.categories header .svg-container svg {
   width: 13rem;
   height: 13rem;
-  fill: #e63429;
+  fill: rgba(0, 0, 0, 0.08);
   -webkit-transition: fill 1s;
   transition: fill 1s;
   position: relative;
@@ -1227,6 +1173,7 @@ section.categories .punch-line {
   -webkit-transition: color 1s;
   transition: color 1s;
   position: relative;
+  padding-top: 10rem;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -1253,19 +1200,13 @@ section.categories .punch-line:after {
 section.categories .punch-line:before {
   content: "\201C";
   left: -7rem;
-  top: 3rem;
+  top: 10rem;
 }
 
 @media only screen and (max-width: 1024px) {
   section.categories .punch-line {
     font-size: 5em;
     line-height: 6rem;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  section.categories .punch-line {
-    padding: 0;
   }
 }
 
@@ -1276,10 +1217,16 @@ section.categories .punch-line:before {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  section.categories .punch-line {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 section.categories .text-container {
   font-size: 22px;
   font-size: 2.2rem;
-  color: #b0b0b0;
   margin-top: 5rem;
 }
 
@@ -1296,21 +1243,23 @@ section.categories .text-container {
 }
 
 section.categories a.discover {
-  font-size: 3rem;
-  color: #fff;
-  padding: 1rem 0rem;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  margin: 7rem 0;
+  font-size: 2.3rem;
+  color: #FFF;
+  font-weight: 100;
+  letter-spacing: .1rem;
+  margin: 7rem 0 15rem;
   display: inline-block;
-  -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-  border-bottom: 3px solid #fff;
+  -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all, 1s border;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all, 1s border;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
   overflow: hidden;
-  height: 5.5rem;
-  width: 15rem;
+  height: 4.5rem;
+  width: 16rem;
   text-align: left;
+  padding-left: 2rem;
+  border-radius: 6px;
+  line-height: 4rem;
 }
 
 section.categories a.discover span {
@@ -1326,6 +1275,7 @@ section.categories a.discover aside {
 section.categories a.discover:hover {
   width: 18rem;
   font-weight: '400';
+  border-color: #ffffff;
 }
 
 section.categories a.discover:hover:after {
@@ -1345,7 +1295,7 @@ section.categories a.discover:after {
   position: absolute;
   height: 100%;
   font-size: 65%;
-  line-height: 7rem;
+  line-height: 4.5rem;
   color: #fff;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -1358,7 +1308,6 @@ section.categories a.discover.loading {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
-  background: #fff;
 }
 
 section.categories a.discover.loading:after {
@@ -1437,7 +1386,7 @@ section.categories .detailled-content .detailled-wrapper .inception-detailled-wr
   padding-bottom: 0;
   z-index: 1;
   position: relative;
-  box-shadow: 0 -1px 0px #6d6d6d, 0 -2px 0px #1a1a1a, 0 1px 1px rgba(0, 0, 0, 0.1), 0 14px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -1px 0 rgba(78, 78, 78, 0.28), 0 1px 1px rgba(0, 0, 0, 0.1), 0 14px 1px rgba(0, 0, 0, 0.08);
 }
 
 section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2,
@@ -1586,10 +1535,6 @@ section.categories header {
   background: #e63429;
 }
 
-section.categories > header .svg-container svg {
-  fill: white!important;
-}
-
 section.categories > header h1 {
   color: white!important;
 }
@@ -1618,6 +1563,11 @@ section.categories.vision {
   box-shadow: 0 -1px 0px #6d6d6d, 0 -2px 0px #1a1a1a;
 }
 
+section.categories.vision header .svg-container svg {
+  width: 16rem;
+  height: 16rem;
+}
+
 section.categories.historique {
   background: #f39c12;
 }
@@ -1633,7 +1583,7 @@ section.categories.historique h1:before {
 }
 
 section.categories.historique .punch-line {
-  font-size: 4.5rem;
+  font-size: 4.3rem;
   line-height: 7rem;
 }
 
@@ -1644,8 +1594,7 @@ section.categories.historique .punch-line {
   }
 }
 
-section.categories.historique .detailled-content .detailled-wrapper header .svg-container svg,
-section.categories.historique header .svg-container svg {
+section.categories.historique .detailled-content .detailled-wrapper header .svg-container svg {
   fill: #f39c12;
   width: 10rem;
   bottom: 1rem;
@@ -1709,8 +1658,7 @@ section.categories.expertise .color:before {
   }
 }
 
-section.categories.expertise .detailled-content .detailled-wrapper header .svg-container svg,
-section.categories.expertise header .svg-container svg {
+section.categories.expertise .detailled-content .detailled-wrapper header .svg-container svg {
   fill: #009884;
   width: 10rem;
   bottom: 1rem;
@@ -1772,7 +1720,6 @@ section.categories.equipe h1:before {
 }
 
 section.categories.equipe svg {
-  fill: #85cedf;
   width: 8rem;
 }
 
@@ -1958,7 +1905,7 @@ section.categories.equipe .team-container h3 {
   text-transform: uppercase;
   margin-top: 3rem;
   margin-bottom: 0;
-  color: #686868;
+  color: #fff;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
@@ -1967,7 +1914,7 @@ section.categories.equipe .team-container h4 {
   margin: 0;
   font-family: 'Aleo';
   font-size: 2rem;
-  color: #9b9b9b;
+  color: #fff;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1976,7 +1923,7 @@ section.categories.equipe .team-container h4 {
   }
 
   section.categories.equipe .team-container article:hover h3 {
-    color: #85cedf;
+    color: #222;
   }
 
   section.categories.equipe .team-container article:hover aside {
@@ -2010,8 +1957,7 @@ section.categories.references h1:before {
   background: #087ec2;
 }
 
-section.categories.references .detailled-content .detailled-wrapper header .svg-container svg,
-section.categories.references header .svg-container svg {
+section.categories.references .detailled-content .detailled-wrapper header .svg-container svg {
   fill: #087ec2;
   bottom: -2rem;
 }
