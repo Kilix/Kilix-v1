@@ -37,11 +37,6 @@ var Kilix = {
         if(isWebkit){
             /* --- INIT CANVAS --- */
             createCanvasIn('container',             '#ffffff',          '#989898',          '#555555',  '#ffffff',          18,     9,      0.8,        0.1);
-            createCanvasIn('vision-delaunay',       Kilix.colors.col1,  Kilix.colors.col1,  '#555555',  '#ffffff',          18,     7,      0.8,        0.1);
-            createCanvasIn('historique-delaunay',   Kilix.colors.col2,  Kilix.colors.col2,  '#616161',  '#4a3606',          18,     7,      0.8,        0.4);
-            createCanvasIn('expertise-delaunay',    Kilix.colors.col3,  Kilix.colors.col3,  '#555555',  '#3c3c3c',          18,     7,      0.8,        0.4);
-            createCanvasIn('equipe-delaunay',       Kilix.colors.col4,  Kilix.colors.col4,  '#555555',  '#3c3c3c',          18,     7,      0.8,        0.4);
-            createCanvasIn('references-delaunay',   Kilix.colors.col5,  Kilix.colors.col5,  '#555555',  '#3c3c3c',          18,     7,      0.8,        0.4);
         }
     },
     resize: function(){
@@ -51,13 +46,7 @@ var Kilix = {
             'height': $(window).height(),
             'line-height': $(window).height()+'px'
         });
-        $('section article.content').height($(window).height() - $('.menu').height());
-        $('.but-wait-there-is-more').css({
-            'margin-top': - $('.but-wait-there-is-more').height()/2,
-            'top': '50%'
-        });
-        
-        
+     
         
         if(Kilix.isCateg){
             var currentHeader = $('.categories').eq($('.detailled-menu aside').data('categ')).find('header');

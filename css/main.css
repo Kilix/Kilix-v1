@@ -610,7 +610,6 @@ nav.mobile-nav .mobile-close {
   letter-spacing: .1rem;
   position: relative;
   text-align: left;
-  font-family: Open Sans;
   line-height: 10rem;
   padding: 0 2rem;
   background: #292929;
@@ -766,7 +765,6 @@ section#home .lead-text {
   font-size: 50px;
   font-size: 5rem;
   text-align: center;
-  font-family: Open sans;
   font-weight: 100;
   line-height: 7rem;
   color: #757575;
@@ -858,7 +856,6 @@ section#about header {
 }
 
 section#about header h1 {
-  font-family: 'Open Sans';
   text-transform: uppercase;
   font-size: 60px;
   font-size: 6rem;
@@ -1049,15 +1046,15 @@ section#about .item-container article:hover p {
 }
 
 section#about .item-container article:nth-child(2) figure:after {
-  box-shadow: 0 0 0 4px #fab400;
+  box-shadow: 0 0 0 4px #f39c12;
 }
 
 section#about .item-container article:nth-child(2) figure svg {
-  fill: #fab400;
+  fill: #f39c12;
 }
 
 section#about .item-container article:nth-child(2):hover figure {
-  background: #fab400;
+  background: #f39c12;
 }
 
 section#about .item-container article:nth-child(2):hover figure svg {
@@ -1065,7 +1062,7 @@ section#about .item-container article:nth-child(2):hover figure svg {
 }
 
 section#about .item-container article:nth-child(2):hover h3 {
-  color: #fab400;
+  color: #f39c12;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1100,31 +1097,16 @@ section#about .item-container article:nth-child(3):hover h3 {
 }
 
 section.categories {
-  box-shadow: 0 -1px 0px #ffffff, 0 -2px 0px #eaeaea;
   position: relative;
   -webkit-transition: background 1.5s;
   transition: background 1.5s;
-  background: white;
+  background: #e63429;
   -webkit-perspective: 1200px;
   -ms-perspective: 1200px;
   perspective: 1200px;
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAzIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.03)), color-stop(100%, rgba(0, 0, 0, 0)));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0) 100%);
-  /* Chrome10+,Safari5.1+ */
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0) 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0) 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#08000000', endColorstr='#00000000', GradientType=0);
-  /* IE6-8 */
 }
 
 section.categories article.content {
@@ -1157,7 +1139,7 @@ section.categories section.current {
 
 section.categories header {
   position: relative;
-  padding: 10rem 0;
+  padding: 10rem 0 5rem 0;
   -webkit-transition: background 1s;
   transition: background 1s;
 }
@@ -1240,12 +1222,11 @@ section.categories header .svg-container svg {
 section.categories .punch-line {
   font-size: 4.4rem;
   line-height: 7rem;
-  color: #333;
+  color: #fff;
   font-family: 'Aleo';
   -webkit-transition: color 1s;
   transition: color 1s;
   position: relative;
-  font-weight: 700;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -1296,7 +1277,6 @@ section.categories .punch-line:before {
 }
 
 section.categories .text-container {
-  font-family: 'Open Sans';
   font-size: 22px;
   font-size: 2.2rem;
   color: #b0b0b0;
@@ -1317,15 +1297,15 @@ section.categories .text-container {
 
 section.categories a.discover {
   font-size: 3rem;
-  color: #e63429;
+  color: #fff;
   padding: 1rem 0rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
-  margin-top: 7rem;
+  margin: 7rem 0;
   display: inline-block;
   -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
   transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
-  border-bottom: 3px solid #e63429;
+  border-bottom: 3px solid #fff;
   position: relative;
   overflow: hidden;
   height: 5.5rem;
@@ -1345,23 +1325,11 @@ section.categories a.discover aside {
 
 section.categories a.discover:hover {
   width: 18rem;
-  background: white;
-  color: #e63429;
   font-weight: '400';
 }
 
 section.categories a.discover:hover:after {
   left: 85%;
-}
-
-section.categories a.discover:active {
-  color: #b0b0b0;
-  border-color: #b0b0b0;
-}
-
-section.categories a.discover:active:after {
-  color: #b0b0b0;
-  left: 87%;
 }
 
 section.categories a.discover:after {
@@ -1378,7 +1346,7 @@ section.categories a.discover:after {
   height: 100%;
   font-size: 65%;
   line-height: 7rem;
-  color: #e63429;
+  color: #fff;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   content: "r";
@@ -1390,7 +1358,7 @@ section.categories a.discover.loading {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
-  background: #e63429;
+  background: #fff;
 }
 
 section.categories a.discover.loading:after {
@@ -1502,7 +1470,6 @@ section.categories .detailled-content .detailled-wrapper .inception-detailled-wr
 section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper p {
   font-size: 22px;
   font-size: 2.2rem;
-  font-family: 'open sans';
   color: rgba(255, 255, 255, 0.6);
   line-height: 3.3rem;
   margin-bottom: 14rem;
@@ -1651,14 +1618,18 @@ section.categories.vision {
   box-shadow: 0 -1px 0px #6d6d6d, 0 -2px 0px #1a1a1a;
 }
 
+section.categories.historique {
+  background: #f39c12;
+}
+
 section.categories.historique .detailled-content .detailled-wrapper header h1,
 section.categories.historique h1 {
-  color: #fab400;
+  color: #f39c12;
 }
 
 section.categories.historique .detailled-content .detailled-wrapper header h1:before,
 section.categories.historique h1:before {
-  background: #fab400;
+  background: #f39c12;
 }
 
 section.categories.historique .punch-line {
@@ -1675,7 +1646,7 @@ section.categories.historique .punch-line {
 
 section.categories.historique .detailled-content .detailled-wrapper header .svg-container svg,
 section.categories.historique header .svg-container svg {
-  fill: #fab400;
+  fill: #f39c12;
   width: 10rem;
   bottom: 1rem;
 }
@@ -1684,30 +1655,12 @@ section.categories.historique .detailled-content .detailled-wrapper header .svg-
   width: 14rem;
 }
 
-section.categories.historique a.discover {
-  color: #fab400;
-  border-color: #fab400;
-}
-
-section.categories.historique a.discover:hover {
-  color: #fab400;
-  background: white;
-}
-
-section.categories.historique a.discover:after {
-  color: #fab400;
-}
-
-section.categories.historique a.discover.loading {
-  background: #fab400 !important;
-}
-
 section.categories.historique header {
-  background: #fab400;
+  background: #f39c12;
 }
 
 section.categories.historique.active header {
-  background: #fab400;
+  background: #f39c12;
 }
 
 section.categories.historique .detailled-wrapper header {
@@ -1715,22 +1668,26 @@ section.categories.historique .detailled-wrapper header {
 }
 
 section.categories.historique .detailled-content .detailled-wrapper .inception-detailled-wrapper {
-  background: #fab400;
+  background: #f39c12;
 }
 
 section.categories.historique .detailled-content .detailled-wrapper footer a.undiscover {
   background: transparent;
-  color: #fab400;
-  border-color: #fab400;
+  color: #f39c12;
+  border-color: #f39c12;
 }
 
 section.categories.historique .detailled-content .detailled-wrapper footer a.undiscover:hover {
-  color: #fab400;
+  color: #f39c12;
   background: transparent;
 }
 
 section.categories.historique .detailled-content .detailled-wrapper footer a.undiscover:after {
-  color: #fab400;
+  color: #f39c12;
+}
+
+section.categories.expertise {
+  background: #009884;
 }
 
 section.categories.expertise .detailled-content .detailled-wrapper header h1,
@@ -1761,24 +1718,6 @@ section.categories.expertise header .svg-container svg {
 
 section.categories.expertise .detailled-content .detailled-wrapper header .svg-container svg {
   width: 14rem;
-}
-
-section.categories.expertise a.discover {
-  color: #009884;
-  border-color: #009884;
-}
-
-section.categories.expertise a.discover:hover {
-  color: #009884;
-  background: white;
-}
-
-section.categories.expertise a.discover:after {
-  color: #009884;
-}
-
-section.categories.expertise a.discover.loading {
-  background: #009884 !important;
 }
 
 section.categories.expertise header {
@@ -1812,6 +1751,10 @@ section.categories.expertise .detailled-content .detailled-wrapper footer a.undi
   color: #009884;
 }
 
+section.categories.equipe {
+  background: #85cedf;
+}
+
 section.categories.equipe header {
   background: #85cedf;
 }
@@ -1831,20 +1774,6 @@ section.categories.equipe h1:before {
 section.categories.equipe svg {
   fill: #85cedf;
   width: 8rem;
-}
-
-section.categories.equipe a.discover {
-  background: #85cedf;
-  border-color: #85cedf;
-}
-
-section.categories.equipe a.discover:hover {
-  color: #85cedf;
-  background: white;
-}
-
-section.categories.equipe a.discover:after {
-  color: #85cedf;
 }
 
 section.categories.equipe .text-container {
@@ -2061,6 +1990,10 @@ section.categories.equipe .team-container h4 {
   }
 }
 
+section.categories.references {
+  background: #087ec2;
+}
+
 section.categories.references header {
   background: #087ec2;
 }
@@ -2098,11 +2031,8 @@ section.categories.references a.discover:after {
 }
 
 section.categories .quote {
-  color: #000000;
   font-size: 1.8rem;
   font-family: 'Aleo';
-  font-style: italic;
-  font-weight: bold;
   margin-top: 2rem;
 }
 
@@ -2290,7 +2220,6 @@ body {
 
 #jprePercentage {
   color: #000;
-  font-family: Open Sans;
   font-weight: lighter;
   text-align: center;
   top: 2rem;
