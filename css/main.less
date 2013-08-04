@@ -6,7 +6,7 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+    color: rgba(34, 34, 34, 0.5);
 }
 html{
     font-size: 62.5%;
@@ -122,14 +122,7 @@ textarea {
     font-style: normal;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
-
-
-
-
-
-
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 
 
 /* ==========================================================================
@@ -201,6 +194,7 @@ body{
     text-align: center;
     font-family: 'Open Sans', Arial, "Helvetica Neue", Helvetica, sans-serif;
     overflow-x:hidden;    
+    color: rgba(34, 34, 34, 0.5);
     
     
     &.push-left .body-wrapper, &.push-left .menu{
@@ -746,6 +740,22 @@ section#home{
         span{
             display: inline-block;
             transform-style:preserve-3d;
+
+            span:last-child{
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-weight: bold;
+                text-align: left;
+                width: 110%;
+                letter-spacing: -0.3rem;
+            }
+
+            &:nth-child(1) span:last-child{color:@col1;}
+            &:nth-child(2) span:last-child{color:@col2;}
+            &:nth-child(3) span:last-child{color:@col3;}
+            &:nth-child(4) span:last-child{color:@col4;}
+            &:nth-child(5) span:last-child{color:@col5;}
         }
         
         @media only screen and (max-width: 768px){
@@ -792,7 +802,7 @@ section#about{
             text-transform: uppercase;
             .font-size(6);
             margin-bottom: 0;
-            font-family: Lato;
+            font-family: Open Sans;
 
             @media only screen and (max-width: 768px){
                 .font-size(3);
