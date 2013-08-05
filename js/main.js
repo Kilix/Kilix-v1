@@ -277,55 +277,55 @@ var Kilix = {
             $('#logo').addClass('disabled');
             console.log($('.detailled-menu aside').data('categ'));
             
-            $('html,body').animate({
-                scrollTop: pageFirst.parent().offset().top - $('.menu').height()
-            }, 400, 'easeOutQuint');
+            
 
             pageTwo.scrollTop(0);
             
             //pageTwo.find('footer').css('position','absolute').css('position','fixed'); //fixing moz bug ?
 
             pageTwo.find('.inception-detailled-wrapper').transition({
-                marginTop:$(window).height() - $('.menu').height()
+                marginTop:$(window).height()
             });
             
             $('.detailled-menu h2').html(currentHeader.find('h1').html());
 
-            pageTwo.parent().css({
-                height:$(window).height() - $('.menu').height()
-            });
+            
 
 
             //simulate loading
             setTimeout(function(){
                 
-                
-                console.log('more');
-                button.removeClass('loading');
-                      
-                var inClass = 'pt-page-moveToLeftEasing ';
-                var outClass = 'pt-page-moveFromRightFade pt-page-ontop';
-                pageFirst.addClass(inClass);
+                $('html,body').animate({
+                    scrollTop: currentCateg.offset().top - $('.menu').height()
+                }, 400, 'easeOutQuint',function(){
+
+                    currentCateg.css({
+                        height:$(window).height() - $('.menu').height()
+                    });
+                    console.log('more');
+                    button.removeClass('loading');
+                          
+                    var inClass = 'pt-page-moveToLeftEasing ';
+                    var outClass = 'pt-page-moveFromRightFade pt-page-ontop';
+                    pageFirst.addClass(inClass);
 
 
-                pageTwo.addClass(outClass + ' current');
-                $('.menu .right').transition({
-                    y: '-10rem'
-                },600, 'snap',function(){
-                    pageFirst.removeClass(inClass + ' current');
-                    pageTwo.removeClass(outClass);
+                    pageTwo.addClass(outClass + ' current');
+                    $('.menu .right').transition({
+                        y: '-10rem'
+                    },600, 'snap',function(){
+                        pageFirst.removeClass(inClass + ' current');
+                        pageTwo.removeClass(outClass);
 
 
-                    pageTwo.find('.inception-detailled-wrapper').transition({
-                        marginTop:'40rem',
-                    },800, 'easeInOutCirc');
-                });
-                
-                $('body').css('overflow','hidden');
+                        pageTwo.find('.inception-detailled-wrapper').transition({
+                            marginTop:'40rem',
+                        },800, 'easeInOutCirc');
+                    });
+                    
+                    $('body').css('overflow','hidden');
 
-                
-                
-                
+                    });
                 
             },1200);
             
@@ -345,10 +345,6 @@ var Kilix = {
             pageFirst.addClass(outClass + ' current');
             $('#logo').removeClass('disabled');
 
-            $('html,body').animate({
-                scrollTop: pageFirst.closest('.categories').offset().top
-            }, 50);
-
             $('.menu .right').transition({
                 y: '0rem'
             },600, 'snap',function(){
@@ -358,7 +354,7 @@ var Kilix = {
             
             $('body').css('overflow','auto');
 
-            pageTwo.parent().attr('style','');
+            currentCateg.attr('style','');
             
         }
     },

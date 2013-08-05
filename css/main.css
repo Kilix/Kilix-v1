@@ -26,6 +26,13 @@ body {
   line-height: 1.4;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+}
+
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -72,22 +79,6 @@ textarea {
    ========================================================================== */
 
 @font-face {
-  font-family: 'Aleo';
-  src: url('../css/fonts/Aleo-Light-webfont.eot');
-  src: url('../css/fonts/Aleo-Light-webfont.eot?#iefix') format('embedded-opentype'), url('../css/fonts/Aleo-Light-webfont.woff') format('woff'), url('../css/fonts/Aleo-Light-webfont.ttf') format('truetype'), url('../css/fonts/Aleo-Light-webfont.svg#Aleo') format('svg');
-  font-weight: lighter;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Aleo';
-  src: url('../css/fonts/Aleo-Regular-webfont.eot');
-  src: url('../css/fonts/Aleo-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../css/fonts/Aleo-Regular-webfont.woff') format('woff'), url('../css/fonts/Aleo-Regular-webfont.ttf') format('truetype'), url('../css/fonts/Aleo-Regular-webfont.svg#Aleo') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'musketbold';
   src: url('../css/fonts/musket_bold-webfont.eot');
   src: url('../css/fonts/musket_bold-webfont.eot?#iefix') format('embedded-opentype'), url('../css/fonts/musket_bold-webfont.woff') format('woff'), url('../css/fonts/musket_bold-webfont.ttf') format('truetype'), url('../css/fonts/musket_bold-webfont.svg#musketbold') format('svg');
@@ -112,6 +103,8 @@ textarea {
    ========================================================================== */
 
 /* Defining colors */
+
+/* Defining font */
 
 @-webkit-keyframes fadeG {
   0% {
@@ -638,6 +631,14 @@ nav.mobile-nav .mobile-close {
   color: #8B8B8B;
   font-size: 5rem;
   z-index: 3;
+  -webkit-transition: 0.5s cubic-bezier(0.7, 0.54, 0, 1);
+  transition: 0.5s cubic-bezier(0.7, 0.54, 0, 1);
+}
+
+.contact-info .contact-close:hover {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 /*--------------*/
@@ -733,7 +734,7 @@ section#home .lead-text {
   font-size: 50px;
   font-size: 5rem;
   text-align: center;
-  font-weight: 100;
+  font-family: 'Open Sans';
   line-height: 7rem;
   color: #757575;
   position: fixed;
@@ -749,6 +750,7 @@ section#home .lead-text {
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  font-weight: 300;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -781,7 +783,7 @@ section#home .lead-text span span:last-child {
   font-weight: bold;
   text-align: left;
   width: 110%;
-  letter-spacing: -0.3rem;
+  letter-spacing: -0.4rem;
 }
 
 section#home .lead-text span:nth-child(1) span:last-child {
@@ -856,11 +858,11 @@ section#about header {
 }
 
 section#about header h1 {
-  text-transform: uppercase;
-  font-size: 60px;
-  font-size: 6rem;
+  font-size: 70px;
+  font-size: 7rem;
   margin-bottom: 0;
-  font-family: Open Sans;
+  font-family: 'Open Sans';
+  font-family: musketbold;
 }
 
 @media only screen and (max-width: 768px) {
@@ -884,7 +886,7 @@ section#about header h1:before {
 }
 
 section#about header h2 {
-  font-family: 'Aleo';
+  font-family: 'Open Sans';
   color: #b0b0b0;
   font-size: 45px;
   font-size: 4.5rem;
@@ -999,8 +1001,7 @@ section#about .item-container article .figure-wrapper figure:after {
 section#about .item-container article h3 {
   font-size: 28px;
   font-size: 2.8rem;
-  font-family: 'Aleo';
-  font-weight: bold;
+  font-family: 'Open Sans';
   text-transform: uppercase;
   -webkit-transition: background 0.2s, color 0.2s;
   transition: background 0.2s, color 0.2s;
@@ -1110,10 +1111,6 @@ section.categories {
   transform-style: preserve-3d;
 }
 
-section.categories article.content {
-  position: relative;
-}
-
 section.categories section.but-wait-there-is-more {
   display: none;
   -webkit-backface-visibility: hidden;
@@ -1200,7 +1197,8 @@ section.categories .punch-line {
   font-size: 4.4rem;
   line-height: 7rem;
   color: #fff;
-  font-family: 'Aleo';
+  font-family: 'Open Sans';
+  font-weight: lighter;
   -webkit-transition: color 1s;
   transition: color 1s;
   position: relative;
@@ -1274,7 +1272,7 @@ section.categories .text-container {
 }
 
 section.categories a.discover {
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   color: #FFF;
   font-weight: 100;
   letter-spacing: .1rem;
@@ -1288,7 +1286,7 @@ section.categories a.discover {
   height: 4.5rem;
   width: 16rem;
   text-align: left;
-  padding-left: 2rem;
+  padding-left: 3.2rem;
   border-radius: 6px;
   line-height: 4rem;
 }
@@ -1424,8 +1422,9 @@ section.categories .detailled-content .detailled-wrapper .inception-detailled-wr
 section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3 {
   font-size: 4.5rem;
   font-style: normal;
-  font-family: 'Aleo';
+  font-family: 'Open Sans';
   color: #FFF;
+  font-weight: normal;
   margin-bottom: 0;
   line-height: 7rem;
   letter-spacing: 0.2rem;
@@ -1445,6 +1444,79 @@ section.categories .detailled-content .detailled-wrapper .inception-detailled-wr
   top: -8rem;
   background: rgba(0, 0, 0, 0) url(../img/separator.svg) bottom center no-repeat;
   background-size: 58px 12px;
+  font-family: icomoon;
+}
+
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2.agile:after,
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3.agile:after {
+  background: transparent;
+  content: 'q';
+}
+
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2.transparence:after,
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3.transparence:after {
+  background: transparent;
+  content: 's';
+}
+
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2.robustesse:after,
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3.robustesse:after {
+  background: transparent;
+  content: 'd';
+}
+
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2.attente:after,
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3.attente:after {
+  background: transparent;
+  content: 'f';
+}
+
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2.evolution:after,
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3.evolution:after {
+  background: transparent;
+  content: 'g';
+}
+
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2.comment:after,
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3.comment:after {
+  background: transparent;
+  content: 'h';
+}
+
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2.creant:after,
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3.creant:after {
+  background: transparent;
+  content: 'u';
+}
+
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2.approche:after,
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3.approche:after {
+  background: transparent;
+  content: 'j';
+}
+
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2.dev:after,
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3.dev:after {
+  background: transparent;
+  content: 'k';
+}
+
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2.design:after,
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3.design:after {
+  background: transparent;
+  content: 'l';
+}
+
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2.qualite:after,
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3.qualite:after {
+  background: transparent;
+  content: 'm';
+}
+
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h2.services:after,
+section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper h3.services:after {
+  background: transparent;
+  content: 'w';
 }
 
 section.categories .detailled-content .detailled-wrapper .inception-detailled-wrapper p {
@@ -1777,9 +1849,9 @@ section.categories.equipe .team-container .back {
   width: 100%;
   height: 100%;
   z-index: 800;
-  -webkit-transform: rotateY(-90deg);
-  -ms-transform: rotateY(-90deg);
-  transform: rotateY(-90deg);
+  -webkit-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -1792,9 +1864,10 @@ section.categories.equipe .team-container .back {
 section.categories.equipe .team-container .back p {
   margin: 0 10%;
   height: 100%;
-  font-size: 1.6rem;
-  background: #dbdbdb;
-  padding: 3rem;
+  font-size: 1.4rem;
+  background: white;
+  padding: 2rem;
+  text-align: left;
 }
 
 section.categories.equipe .team-container .front,
@@ -1859,9 +1932,9 @@ section.categories.equipe .team-container .figure-wrapper aside {
   line-height: 4rem;
   margin-top: -2rem;
   font-size: 2rem;
-  font-family: 'Aleo';
+  font-family: 'Open Sans';
   font-style: italic;
-  font-weight: bold;
+  font-weight: 300;
   color: white;
   letter-spacing: 0.1rem;
   -webkit-transform: translateY(-15rem);
@@ -1930,8 +2003,7 @@ section.categories.equipe .team-container figure img {
 }
 
 section.categories.equipe .team-container h3 {
-  font-family: 'Aleo';
-  font-weight: bold;
+  font-family: 'Open Sans';
   font-size: 3.8rem;
   text-transform: uppercase;
   margin-top: 3rem;
@@ -1943,9 +2015,9 @@ section.categories.equipe .team-container h3 {
 
 section.categories.equipe .team-container h4 {
   margin: 0;
-  font-family: 'Aleo';
-  font-size: 2rem;
+  font-family: 'Open Sans';
   color: #fff;
+  font-size: 1.6rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1954,7 +2026,7 @@ section.categories.equipe .team-container h4 {
   }
 
   section.categories.equipe .team-container article:hover h3 {
-    color: #222;
+    color: #5dbed4;
   }
 
   section.categories.equipe .team-container article:hover aside {
@@ -1964,7 +2036,7 @@ section.categories.equipe .team-container h4 {
   }
 
   section.categories.equipe .team-container article:hover aside:after {
-    left: 72%;
+    left: 74%;
   }
 }
 
@@ -2009,7 +2081,7 @@ section.categories.references a.discover:after {
 
 section.categories .quote {
   font-size: 1.8rem;
-  font-family: 'Aleo';
+  font-family: 'Open Sans';
   margin-top: 2rem;
 }
 
@@ -2262,16 +2334,13 @@ body {
 
 @-webkit-keyframes moveToRight {
   to {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
 @keyframes moveToRight {
   to {
-    -webkit-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
@@ -2294,18 +2363,13 @@ body {
 
 @-webkit-keyframes moveFromRightFade {
   from {
-    opacity: 0.3;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
 @keyframes moveFromRightFade {
   from {
-    opacity: 0.3;
-    -webkit-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    transform: translateX(100%);
+    opacity: 0;
   }
 }
 

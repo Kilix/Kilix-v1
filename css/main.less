@@ -18,6 +18,13 @@ html{
 body {
     line-height: 1.4;
 }
+
+h1,h2,h3,h4{
+    font-weight: normal;
+}
+
+
+
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -82,26 +89,6 @@ textarea {
    Font-faces
    ========================================================================== */
 @font-face {
-    font-family: 'Aleo';
-    src: url('../css/fonts/Aleo-Light-webfont.eot');
-    src: url('../css/fonts/Aleo-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../css/fonts/Aleo-Light-webfont.woff') format('woff'),
-         url('../css/fonts/Aleo-Light-webfont.ttf') format('truetype'),
-         url('../css/fonts/Aleo-Light-webfont.svg#Aleo') format('svg');
-    font-weight: lighter;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Aleo';
-    src: url('../css/fonts/Aleo-Regular-webfont.eot');
-    src: url('../css/fonts/Aleo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../css/fonts/Aleo-Regular-webfont.woff') format('woff'),
-         url('../css/fonts/Aleo-Regular-webfont.ttf') format('truetype'),
-         url('../css/fonts/Aleo-Regular-webfont.svg#Aleo') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
     font-family: 'musketbold';
     src: url('../css/fonts/musket_bold-webfont.eot');
     src: url('../css/fonts/musket_bold-webfont.eot?#iefix') format('embedded-opentype'),
@@ -122,7 +109,7 @@ textarea {
     font-style: normal;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
 
 
 /* ==========================================================================
@@ -175,6 +162,15 @@ textarea {
 @menuHeight: 10rem;
 @logoHeight: 9.99rem;
 
+/* Defining font */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+
+@h2-font: 'Open Sans';
+@text-font: 'Open Sans';
+@lead-text: 'Open Sans';
+@optional-text: 'Crimson Text';
+
 
 
 
@@ -192,7 +188,7 @@ textarea {
 } 
 body{
     text-align: center;
-    font-family: 'Open Sans', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: @text-font, Arial, "Helvetica Neue", Helvetica, sans-serif;
     overflow-x:hidden;    
     color: rgba(34, 34, 34, 0.5);
     
@@ -631,6 +627,11 @@ nav.mobile-nav{
             color: #8B8B8B;
             font-size: 5rem;
             z-index: 3;
+            transition: 0.5s cubic-bezier(.70, .54, 0, 1);
+            
+            &:hover{
+                transform: rotate(90deg);
+            }
         }
     }
     
@@ -714,7 +715,7 @@ section#home{
     .lead-text{
         .font-size(5);
         text-align: center;
-        font-weight: 100;
+        font-family: @lead-text;
         line-height: 7rem;
         color: rgb(117, 117, 117);
         position: fixed;
@@ -724,7 +725,8 @@ section#home{
         transform: translateX(-50%) translateY(-50%) perspective(800px);
         perspective:800;
         transform-style:preserve-3d;
-        
+        font-weight: 300;
+
         @media only screen and (max-width: 1440px){
             font-size: 4.5rem;
             width: 90rem;
@@ -748,7 +750,7 @@ section#home{
                 font-weight: bold;
                 text-align: left;
                 width: 110%;
-                letter-spacing: -0.3rem;
+                letter-spacing: -0.4rem;
             }
 
             &:nth-child(1) span:last-child{color:@col1;}
@@ -799,10 +801,10 @@ section#about{
     header{
         position: relative;
         h1{
-            text-transform: uppercase;
-            .font-size(6);
+            .font-size(7);
             margin-bottom: 0;
-            font-family: Open Sans;
+            font-family: @text-font;
+            font-family: musketbold;
 
             @media only screen and (max-width: 768px){
                 .font-size(3);
@@ -820,7 +822,7 @@ section#about{
             }
         }
         h2{
-            font-family: 'Aleo';
+            font-family: @h2-font;
             color: @gris1;
             .font-size(4.5);
             font-weight:normal;
@@ -908,8 +910,7 @@ section#about{
             }
             h3{
                 .font-size(2.8);
-                font-family: 'Aleo';
-                font-weight: bold;
+                font-family: @h2-font;
                 text-transform: uppercase;
                 transition: background 0.2s, color 0.2s;
                 color:@gris1;
@@ -1008,7 +1009,6 @@ section.categories{
     transform-style: preserve-3d;
 
     article.content{
-        position: relative;
     }
     section.but-wait-there-is-more{    
         display: none;
@@ -1083,7 +1083,8 @@ section.categories{
         font-size: 4.4rem;
         line-height: 7rem;
         color: #fff;
-        font-family: 'Aleo';
+        font-family: @h2-font;
+        font-weight: lighter;
         transition: color 1s;
         position: relative;
         padding-top: 10rem;
@@ -1141,7 +1142,7 @@ section.categories{
         
     }
     a.discover{
-        font-size: 2.3rem;
+        font-size: 1.8rem;
         color: #FFF;
         font-weight: 100;
         letter-spacing: .1rem;
@@ -1154,7 +1155,7 @@ section.categories{
         height: 4.5rem;
         width: 16rem;
         text-align: left;
-        padding-left: 2rem;
+        padding-left: 3.2rem;
         border-radius: 6px;
         line-height: 4rem;
         
@@ -1279,8 +1280,9 @@ section.categories{
                 h2,h3{
                     font-size: 4.5rem;
                     font-style:normal;
-                    font-family: 'Aleo';
+                    font-family: @h2-font;
                     color: #FFF;
+                    font-weight: normal;
                     margin-bottom: 0;
                     line-height: 7rem;
                     letter-spacing: 0.2rem;
@@ -1298,6 +1300,62 @@ section.categories{
                         top: -8rem;
                         background: rgba(0, 0, 0, 0) url(../img/separator.svg) bottom center no-repeat;
                         background-size: 58px 12px;
+                        font-family: icomoon;
+                    }
+
+                    &.agile:after{
+                        background: transparent;
+                        content: 'q';
+                    }
+                    &.transparence:after{
+                        background: transparent;
+                        content: 's';
+                    }
+                    &.robustesse:after{
+                        background: transparent;
+                        content: 'd';
+                    }
+
+
+
+                    &.attente:after{
+                        background: transparent;
+                        content: 'f';
+                    }
+                    &.evolution:after{
+                        background: transparent;
+                        content: 'g';
+                    }
+                    &.comment:after{
+                        background: transparent;
+                        content: 'h';
+                    }
+                    &.creant:after{
+                        background: transparent;
+                        content: 'u';
+                    }
+
+
+
+                    &.approche:after{
+                        background: transparent;
+                        content: 'j';
+                    }
+                    &.dev:after{
+                        background: transparent;
+                        content: 'k';
+                    }
+                    &.design:after{
+                        background: transparent;
+                        content: 'l';
+                    }
+                    &.qualite:after{
+                        background: transparent;
+                        content: 'm';
+                    }
+                    &.services:after{
+                        background: transparent;
+                        content: 'w';
                     }
                 }
                 
@@ -1583,16 +1641,17 @@ section.categories{
                 top: 0;
                 left: 0; width: 100%; height: 100%;
                 z-index: 800;                
-                transform: rotateY(-90deg);
+                transform: rotateY(-180deg);
                 transform-style: preserve-3d;
                 backface-visibility: hidden;
                 z-index: 1;
                 p{
                     margin: 0 10%;
                     height: 100%;
-                    font-size: 1.6rem;
-                    background: rgb(219, 219, 219);
-                    padding: 3rem;
+                    font-size: 1.4rem;
+                    background: white;
+                    padding: 2rem;
+                    text-align: left;
                 }
             }
             .front, .back{
@@ -1641,9 +1700,9 @@ section.categories{
                     line-height: 4rem;
                     margin-top: -2rem;
                     font-size: 2rem;
-                    font-family: 'Aleo';
+                    font-family: @h2-font;
                     font-style: italic;
-                    font-weight: bold;
+                    font-weight: 300;
                     color: white;
                     letter-spacing: 0.1rem;
                     transform: translateY(-15rem);
@@ -1700,8 +1759,7 @@ section.categories{
                 }
             }
             h3{
-                font-family: 'Aleo';
-                font-weight: bold;
+                font-family: @h2-font;
                 font-size: 3.8rem;
                 text-transform: uppercase;
                 margin-top: 3rem;
@@ -1711,9 +1769,9 @@ section.categories{
             }
             h4{
                 margin: 0;
-                font-family: 'Aleo';
-                font-size: 2rem;
+                font-family: @h2-font;
                 color: #fff;
+                font-size: 1.6rem;
             }
             
             @media only screen and (min-width: 768px){
@@ -1722,12 +1780,12 @@ section.categories{
                         opacity:0.2;
                     }
                     h3{
-                        color:  #222;
+                        color:  darken(@col4,10%);
                     }
                     aside{
                         transform: translateY(0);
                         &:after{
-                            left: 72%;
+                            left: 74%;
                         }
                     }
                 }
@@ -1766,7 +1824,7 @@ section.categories{
     }
     .quote{
         font-size: 1.8rem;
-        font-family: 'Aleo';
+        font-family: @text-font;
         margin-top: 2rem;
     }
 }
@@ -1976,7 +2034,7 @@ body{visibility:hidden;}
 }
 
 @keyframes moveToRight { 
-    to { transform: translateX(100%); }
+    to { opacity:0; }
 }
 
 @keyframes moveFromLeftFade {
@@ -1985,7 +2043,7 @@ body{visibility:hidden;}
 
 
 @keyframes moveFromRightFade {
-	from { opacity: 0.3; transform: translateX(100%); }
+	from { opacity: 0}
 }
 
 
