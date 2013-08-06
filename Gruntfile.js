@@ -77,6 +77,15 @@ module.exports = function(grunt) {
                     ext: '.svg'
                 }]
             }
+        },
+
+        //SVG2PNG
+        svg2png: {
+            all: {
+                files: [
+                { src: ['img/*.svg']}
+                ]
+            }
         }
     });
     
@@ -86,6 +95,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-svgmin');
+    grunt.loadNpmTasks('grunt-svg2png');
     
     
     //Watch

@@ -129,7 +129,7 @@ textarea {
 body {
   text-align: center;
   font-family: 'Open Sans', Arial, "Helvetica Neue", Helvetica, sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden!important;
   color: rgba(34, 34, 34, 0.5);
 }
 
@@ -391,6 +391,10 @@ section.body-wrapper {
 .menu #logo img polygon {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+.menu #logo img {
+  height: auto;
 }
 
 .menu nav.nav ul {
@@ -771,6 +775,7 @@ section#home .lead-text {
 
 section#home .lead-text span {
   display: inline-block;
+  position: relative;
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -1896,9 +1901,10 @@ section.categories.equipe .team-container label {
   width: 100%;
   height: 100%;
   position: absolute;
+  display: block;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 999;
   cursor: pointer;
   z-index: 1000;
 }
