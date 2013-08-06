@@ -15,33 +15,36 @@ var Kilix = {
         
         /*--- INIT SVG SWITCHING ---*/
         Kilix.switchSVG();
+
         /*----- STICKY HEADING -----*/
         Kilix.nav();
+
         /*--- FUNCTIONS ON RESIZE --*/
         Kilix.resize();Kilix.resize();
         $(window).on('resize',Kilix.resize);
         
         /*---- INIT ANIMATIONS -----*/
-        setTimeout(function(){Kilix.animations()},500);
+        if(!isMobile)Kilix.animations();
+
         /*------- INIT BUTTON ------*/
         $('.categories .discover').on('click', this.section.openCategorie);
         $('.detailled-menu aside, a.undiscover, .close-categ-mobile').on('click', this.section.closeCategorie);
         
         /*--- INIT SUPA SKROLLA ----*/
-        skrollr.init({
-            smoothScrolling:true
-        });
+        if(!isMobile){
+            skrollr.init({
+                smoothScrolling:true
+            });
+        }
         
-        console.log(window.matchMedia("only screen and (max-width: 768px)").matches+" hu");
-        var isWebkit = 'webkitRequestAnimationFrame' in window;
-        if(isWebkit){
-            /* --- INIT CANVAS --- */
+        /* --- INIT CANVAS --- */
+        if(!isMobile){
             createCanvasIn('container',             '#ffffff',          '#989898',          '#555555',  '#ffffff',          18,     9,      0.8,        0.1);
         }
     },
     resize: function(){
         $('#home').width($(window).width());
-        $('#home').height(3000);
+        $('#home').height(isMobile?$(window).height():3000);
         $('.height-full-centered').css({
             'height': $(window).height(),
             'line-height': $(window).height()+'px'
@@ -155,7 +158,7 @@ var Kilix = {
             $('body').toggleClass('push-left').toggleClass('nope');
         });
         
-        $('.contact-link, .contact-close, .contact-mobile').on('click', function(e){
+        $('.contact-link, .contact-close, .contact-mobile, .contact-button').on('click', function(e){
             e.preventDefault();
             $('.contact-info').toggleClass('open');
             $('body').toggleClass('push-right').toggleClass('nope');
@@ -281,8 +284,6 @@ var Kilix = {
 
             pageTwo.scrollTop(0);
             
-            //pageTwo.find('footer').css('position','absolute').css('position','fixed'); //fixing moz bug ?
-
             pageTwo.find('.inception-detailled-wrapper').transition({
                 marginTop:$(window).height()
             });
@@ -297,7 +298,7 @@ var Kilix = {
                 
                 $('html,body').animate({
                     scrollTop: currentCateg.offset().top - $('.menu').height()
-                }, 400, 'easeOutQuint',function(){
+                }, 200,function(){
 
                     currentCateg.css({
                         height:$(window).height() - $('.menu').height()
@@ -319,10 +320,12 @@ var Kilix = {
 
 
                         pageTwo.find('.inception-detailled-wrapper').transition({
-                            marginTop:'40rem',
+                            marginTop: isMobile?'20rem':'40rem',
                         },800, 'easeInOutCirc');
                     });
-                    
+
+                    $('.unfold').addClass('hidden');
+                    $('.close-categ-mobile').removeClass('hidden');     
                     $('body').css('overflow','hidden');
 
                     });
@@ -351,7 +354,10 @@ var Kilix = {
                 pageTwo.removeClass(inClass + ' current');
                 pageFirst.removeClass(outClass);
             });
-            
+
+
+            $('.unfold').removeClass('hidden');
+            $('.close-categ-mobile').addClass('hidden');
             $('body').css('overflow','auto');
 
             currentCateg.attr('style','');

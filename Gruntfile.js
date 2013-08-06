@@ -45,8 +45,8 @@ module.exports = function(grunt) {
         uglify: {
             minify: {
               files: {
-                'js/script.min.js': ['js/plugins.js', 'js/main.js'],
-                'js/script-mobile.min.js': ['js/plugins-mobile.js', 'js/main-mobile.js'],
+                'js/script.min.js': ['js/plugins.js', 'js/plugins-desktop.js', 'js/main.js'],
+                'js/script-mobile.min.js': ['js/plugins.js', 'js/main.js'],
               }
             }
           },

@@ -786,6 +786,12 @@ section#home .lead-text span span:last-child {
   letter-spacing: -0.4rem;
 }
 
+@media only screen and (max-width: 1280px) {
+  section#home .lead-text span span:last-child {
+    display: none;
+  }
+}
+
 section#home .lead-text span:nth-child(1) span:last-child {
   color: #e63429;
 }
@@ -2042,6 +2048,7 @@ section.categories.equipe .team-container h4 {
 
 section.categories.references {
   background: #087ec2;
+  padding-bottom: 15rem;
 }
 
 section.categories.references header {
@@ -2079,6 +2086,54 @@ section.categories.references a.discover:after {
   color: #087ec2;
 }
 
+section.categories.references .square {
+  padding-bottom: 33.3%;
+  background: url('../img/references.png');
+  background-size: 300%;
+}
+
+@media only screen and (max-width: 768px) {
+  section.categories.references .square {
+    padding-bottom: 50%;
+  }
+}
+
+section.categories.references .square.orange {
+  background-position: 0 0;
+}
+
+section.categories.references .square.sfr {
+  background-position: 50% 0;
+}
+
+section.categories.references .square.aegis {
+  background-position: 100% 0;
+}
+
+section.categories.references .square.fullsix {
+  background-position: 0 50%;
+}
+
+section.categories.references .square.tf1 {
+  background-position: 50% 50%;
+}
+
+section.categories.references .square.lagardere {
+  background-position: 100% 50%;
+}
+
+section.categories.references .square.decaux {
+  background-position: 0 100%;
+}
+
+section.categories.references .square.generali {
+  background-position: 50% 100%;
+}
+
+section.categories.references .square.publicis {
+  background-position: 100% 100%;
+}
+
 section.categories .quote {
   font-size: 1.8rem;
   font-family: 'Open Sans';
@@ -2086,8 +2141,20 @@ section.categories .quote {
 }
 
 footer.contact-footer {
-  height: 20rem;
+  height: 50rem;
   background: url('../img/black_lozenge.png');
+}
+
+footer.contact-footer .last-sentence {
+  position: fixed;
+  bottom: 25rem;
+  font-size: 5em;
+  color: white;
+  font-weight: 300;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 footer.contact-footer a.contact-button {
