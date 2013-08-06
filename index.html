@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <!--[if gt IE 7]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+        <!--[if lt IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
         <title>Kilix - L'Usine digitale - Full Background</title>
         <meta name="description" content="">
         <meta name="keywords" content="" />
@@ -26,9 +26,28 @@
         <script src="js/vendor/matchMedia.js"></script>
     </head>
     <body id="skrollr-body">
-        <!--[if lt IE 8]>
+        <!--[if lt IE 9]>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+
+            <style>
+             .chromeFrameInstallDefaultStyle {
+               width: 800px; /* default is 800px */
+               border: 5px solid blue;
+               position:absolute;
+               z-index:999;
+             }
+            </style>
+
+            <div id="prompt">
+            </div>
+         
             <script>
-                window.location.href('ie');
+             window.attachEvent("onload", function() {
+               CFInstall.check({
+                 mode: "overlay", // the default
+                 node: "prompt"
+               });
+             });
             </script>
         <![endif]-->
         
@@ -40,15 +59,7 @@
            <section class="row home-wrapper">
                 <h1 data-1500="opacity:0;top[sqrt]:29%" data-1900="opacity:1;top:35%">
                     <img class="svg" src="img/logo_small.svg" alt="">
-                    <!--<img src="img/logo.png">-->
                 </h1>
-                <!--
-                rgba(230,52,41,1)
-                rgba(250,180,0,1)
-                color:rgba(0,152,132,1);
-                color:rgba(133,206,223,1);
-                color:rgba(8,126,194,1)
-            -->
                <section class="lead-text" data-0="top[swing]:50%;opacity:1" data-1450="top:50%;" data-1700="top:47%;opacity:0">
                     <span>
                         <span data-0="opacity:1;transform:translateY(0%);"     data-100="opacity:0;transform:translateY(-20%%);">Talent management</span>

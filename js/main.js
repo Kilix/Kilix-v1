@@ -38,7 +38,7 @@ var Kilix = {
         }
         
         /* --- INIT CANVAS --- */
-        if(!isMobile){
+        if(!isMobile && Modernizr.canvas){
             createCanvasIn('container',             '#ffffff',          '#989898',          '#555555',  '#ffffff',          18,     9,      0.8,        0.1);
         }
     },
@@ -228,60 +228,6 @@ var Kilix = {
                 canvas.hide();
             }
         });
-        
-        // $('section.categories header h1').css({
-        //     y: '-5rem'        
-        //     }).waypoint({
-        //     handler: function (direction) {
-        //         if (direction === 'down') {
-        //             $(this).closest('.categories').addClass('active');
-        //             $(this).transition({
-        //                 y: '0'
-        //             },500, 'easeInOutCirc');
-        //         }
-        //         else{
-        //             $(this).closest('.categories').removeClass('active');
-        //             $(this).transition({
-        //                 delay:500,
-        //                 y: '-5rem'
-        //             },500, 'easeOutCirc');
-        //         }
-        //     },
-        //     offset: '90%'
-        // });
-        
-        // $('section.categories header .replaced-svg').css({
-        //     y: '14rem'        
-        //     }).waypoint({
-        //     handler: function (direction) {
-        //         if (direction === 'down') {
-        //             $(this).transition({
-        //                 delay: 500,
-        //                 y: '0'
-        //             },500, 'easeOutCirc');
-        //         }
-        //         else{
-        //             $(this).transition({
-        //                 y: '14rem'
-        //             },500, 'easeOutCirc');
-        //         }
-        //     },
-        //     offset: '75%'
-        // });
-        
-        // $('.categories h1').addClass('before-0').waypoint({
-        //     handler: function (direction) {
-        //         var $el = $(this);
-        //         if (direction === 'down') {
-        //             $el.removeClass('before-0');
-        //         }else{
-        //             setTimeout(function() {
-        //                 $el.addClass('before-0');
-        //             }, 500);
-        //         }
-        //     },
-        //     offset: '75%'
-        // });  
     },
     section:{
         openCategorie: function(){
