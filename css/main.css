@@ -131,6 +131,7 @@ body {
   font-family: 'Open Sans', Arial, "Helvetica Neue", Helvetica, sans-serif;
   overflow-x: hidden!important;
   color: rgba(34, 34, 34, 0.5);
+  height: auto!important;
 }
 
 body.push-left .body-wrapper,
@@ -332,16 +333,15 @@ section.body-wrapper {
   text-align: right;
   font-size: 4rem;
   font-family: musketbold;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 6px 1px rgba(0, 0, 0, 0.08);
   float: right;
 }
 
 .menu .detailled-menu aside {
   height: 9.99rem;
-  width: 11rem;
+  width: 9.99rem;
   float: right;
   border-width: 0 1px;
-  line-height: 10rem;
+  line-height: 9.99rem;
   cursor: pointer;
   font-size: 5rem;
   -webkit-transition: 0.5s cubic-bezier(0.7, 0.54, 0, 1);
@@ -395,6 +395,13 @@ section.body-wrapper {
 
 .menu #logo img {
   height: auto;
+}
+
+.menu #logo:hover #goutte1,
+.menu #logo:hover #goutte2 {
+  -webkit-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  transform: translateY(-40px);
 }
 
 .menu nav.nav ul {
@@ -645,6 +652,16 @@ nav.mobile-nav .mobile-close {
   transform: rotate(90deg);
 }
 
+.contact-info .copyright-contact {
+  color: rgba(0, 0, 0, 0.37);
+  position: absolute;
+  bottom: 2rem;
+  font-size: 1.2rem;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+}
+
 /*--------------*/
 
 /*------HOME----*/
@@ -675,14 +692,16 @@ section#home #container {
   opacity: 1;
 }
 
-section#home #container:before {
-  content: " ";
+section#home #container:after {
   width: 100%;
   height: 100%;
+  background: url("http://wagerfield.github.io/flat-surface-shader/assets/styles/../graphics/noise.png");
   position: absolute;
+  opacity: 0.1;
+  content: " ";
   top: 0;
   left: 0;
-  z-index: 85;
+  z-index: 1;
 }
 
 section#home .home-wrapper {
@@ -834,7 +853,7 @@ section#home .lead-text span:nth-child(5) span:last-child {
 
 section#home footer {
   bottom: 0;
-  position: fixed;
+  position: absolute;
   left: 0;
   width: 100%;
 }
@@ -1036,7 +1055,7 @@ section#about .item-container article p {
 }
 
 section#about .item-container article:hover figure {
-  background: #e63429;
+  background: url('../img/abstract.svg') center center no-repeat #e63429;
 }
 
 section#about .item-container article:hover figure:after {
@@ -1067,7 +1086,7 @@ section#about .item-container article:nth-child(2) figure svg {
 }
 
 section#about .item-container article:nth-child(2):hover figure {
-  background: #f39c12;
+  background: url('../img/abstract.svg') center center no-repeat #f39c12;
 }
 
 section#about .item-container article:nth-child(2):hover figure svg {
@@ -1098,7 +1117,7 @@ section#about .item-container article:nth-child(3) figure svg {
 }
 
 section#about .item-container article:nth-child(3):hover figure {
-  background: #009884;
+  background: url('../img/abstract.svg') center center no-repeat #009884;
 }
 
 section#about .item-container article:nth-child(3):hover figure svg {
@@ -1120,6 +1139,46 @@ section.categories {
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+section.categories:after {
+  width: 100%;
+  height: 100%;
+  background: url("http://wagerfield.github.io/flat-surface-shader/assets/styles/../graphics/noise.png");
+  position: absolute;
+  opacity: 0.1;
+  content: " ";
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+section.categories .abstract {
+  position: absolute;
+  width: 50rem;
+  height: 50rem;
+  top: 50%;
+  left: 50%;
+  margin-left: -25rem;
+  margin-top: -25rem;
+}
+
+section.categories .abstract img,
+section.categories .abstract svg {
+  width: 50rem;
+  height: 50rem;
+}
+
+section.categories .abstract img polygon,
+section.categories .abstract svg polygon {
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+section.categories .abstract img polygon:hover,
+section.categories .abstract svg polygon:hover {
+  opacity: 0.2;
 }
 
 section.categories section.but-wait-there-is-more {
@@ -1214,6 +1273,7 @@ section.categories .punch-line {
   transition: color 1s;
   position: relative;
   padding-top: 10rem;
+  pointer-events: none;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -1645,20 +1705,12 @@ section.categories .detailled-content .detailled-wrapper footer a.undiscover:aft
   top: 0;
 }
 
-section.categories header {
-  background: #e63429;
-}
-
 section.categories > header h1 {
   color: white!important;
 }
 
 section.categories > header h1:before {
   background: white!important;
-}
-
-section.categories.active header {
-  background: #e63429;
 }
 
 section.categories.active > header svg {
@@ -1718,14 +1770,6 @@ section.categories.historique .detailled-content .detailled-wrapper header .svg-
   width: 14rem;
 }
 
-section.categories.historique header {
-  background: #f39c12;
-}
-
-section.categories.historique.active header {
-  background: #f39c12;
-}
-
 section.categories.historique .detailled-wrapper header {
   background: transparent;
 }
@@ -1782,14 +1826,6 @@ section.categories.expertise .detailled-content .detailled-wrapper header .svg-c
   width: 14rem;
 }
 
-section.categories.expertise header {
-  background: #009884;
-}
-
-section.categories.expertise.active header {
-  background: #009884;
-}
-
 section.categories.expertise .detailled-wrapper header {
   background: transparent;
 }
@@ -1817,24 +1853,12 @@ section.categories.equipe {
   background: #85cedf;
 }
 
-section.categories.equipe header {
-  background: #85cedf;
-}
-
-section.categories.equipe.active header {
-  background: #85cedf;
-}
-
 section.categories.equipe h1 {
   color: #85cedf;
 }
 
 section.categories.equipe h1:before {
   background: #85cedf;
-}
-
-section.categories.equipe svg {
-  width: 8rem;
 }
 
 section.categories.equipe .text-container {
@@ -1879,6 +1903,18 @@ section.categories.equipe .team-container .back p {
   background: white;
   padding: 2rem;
   text-align: left;
+}
+
+section.categories.equipe .team-container .back p:after {
+  content: " ";
+  position: absolute;
+  width: 15rem;
+  height: 1px;
+  background: #888888;
+  bottom: 4rem;
+  z-index: 500;
+  margin-left: -7.5rem;
+  left: 50%;
 }
 
 section.categories.equipe .team-container .front,
@@ -1937,48 +1973,23 @@ section.categories.equipe .team-container .figure-wrapper {
 section.categories.equipe .team-container .figure-wrapper aside {
   position: absolute;
   z-index: 1;
-  left: 0;
-  width: 100%;
-  height: 4rem;
+  left: 50%;
+  width: 10rem;
+  height: 10rem;
   top: 50%;
-  line-height: 4rem;
-  margin-top: -2rem;
-  font-size: 2rem;
+  line-height: 10rem;
+  margin-top: -5rem;
+  font-size: 14rem;
   font-family: 'Open Sans';
-  font-style: italic;
   font-weight: 300;
-  color: white;
-  letter-spacing: 0.1rem;
-  -webkit-transform: translateY(-15rem);
-  -ms-transform: translateY(-15rem);
-  transform: translateY(-15rem);
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-  overflow: hidden;
-}
-
-section.categories.equipe .team-container .figure-wrapper aside:after {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  position: relative;
-  -webkit-font-smoothing: antialiased;
-  position: absolute;
-  height: 100%;
-  font-size: 80%;
-  line-height: 2.8;
-  color: white;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  content: "r";
-  left: 120%;
-  top: 0;
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
+  color: #fff;
+  margin-left: -5rem;
+  opacity: 0;
+  -webkit-transform: rotateY(360deg) translateY(-30px);
+  -ms-transform: rotateY(360deg) translateY(-30px);
+  transform: rotateY(360deg) translateY(-30px);
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 
 section.categories.equipe .team-container .figure-wrapper:before {
@@ -1987,7 +1998,7 @@ section.categories.equipe .team-container .figure-wrapper:before {
   position: absolute;
   width: 80%;
   height: 100%;
-  background: #85cedf;
+  background: url(../img/abstract.svg) center center no-repeat #ff9776;
   margin-left: 10%;
   top: 0;
   left: 0;
@@ -2037,32 +2048,17 @@ section.categories.equipe .team-container h4 {
     opacity: 0.2;
   }
 
-  section.categories.equipe .team-container article:hover h3 {
-    color: #5dbed4;
-  }
-
   section.categories.equipe .team-container article:hover aside {
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  section.categories.equipe .team-container article:hover aside:after {
-    left: 74%;
+    -webkit-transform: rotateY(0deg) translateY(0px);
+    -ms-transform: rotateY(0deg) translateY(0px);
+    transform: rotateY(0deg) translateY(0px);
+    opacity: 1;
   }
 }
 
 section.categories.references {
   background: #087ec2;
   padding-bottom: 15rem;
-}
-
-section.categories.references header {
-  background: #087ec2;
-}
-
-section.categories.references.active header {
-  background: #087ec2;
 }
 
 section.categories.references h1 {
@@ -2076,6 +2072,10 @@ section.categories.references h1:before {
 section.categories.references .detailled-content .detailled-wrapper header .svg-container svg {
   fill: #087ec2;
   bottom: -2rem;
+}
+
+section.categories.references .content {
+  pointer-events: none;
 }
 
 section.categories.references a.discover {
@@ -2141,14 +2141,21 @@ section.categories.references .square.publicis {
 }
 
 section.categories .quote {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: 'Open Sans';
   margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+section.categories .quote span {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
 }
 
 footer.contact-footer {
   height: 50rem;
   background: url('../img/black_lozenge.png');
+  background-attachment: fixed;
 }
 
 footer.contact-footer .last-sentence {
@@ -2161,6 +2168,12 @@ footer.contact-footer .last-sentence {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 1280px) {
+  footer.contact-footer .last-sentence {
+    font-size: 4em;
+  }
 }
 
 footer.contact-footer a.contact-button {
@@ -2226,6 +2239,12 @@ footer.contact-footer .copyright {
   left: 50%;
   width: 400px;
   margin-left: -200px;
+}
+
+#goutte1,
+#goutte2 {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 #goutte2 {

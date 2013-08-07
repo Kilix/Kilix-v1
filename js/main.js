@@ -52,10 +52,6 @@ var Kilix = {
      
         
         if(Kilix.isCateg){
-            var currentHeader = $('.categories').eq($('.detailled-menu aside').data('categ')).find('header');
-            
-
-
             var currentCateg = $('.categories').eq($('.detailled-menu aside').data('categ'));
             currentCateg.css({
                 height:$(window).height() - $('.menu').height()
@@ -159,6 +155,8 @@ var Kilix = {
             }, 2000);
         });
         $('#logo').on('click',function(e){
+
+            if(Kilix.isCateg)Kilix.section.closeCategorie();
             $('html,body').animate({
                 scrollTop: $('.❤[data-slide="0"]').offset().top
             }, 2000);
@@ -240,7 +238,7 @@ var Kilix = {
             Kilix.isCateg = true;
             button.addClass('loading');
             $('.detailled-menu aside').data('categ',currentCateg.index('.categories'));
-            $('#logo').addClass('disabled');
+            //$('#logo').addClass('disabled');
             console.log($('.detailled-menu aside').data('categ'));
             
             
@@ -309,7 +307,7 @@ var Kilix = {
             Kilix.isCateg = false;
             pageTwo.addClass(inClass);
             pageFirst.addClass(outClass + ' current');
-            $('#logo').removeClass('disabled');
+            //$('#logo').removeClass('disabled');
 
             $('.menu .right').transition({
                 y: '0rem'

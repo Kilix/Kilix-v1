@@ -191,7 +191,7 @@ body{
     font-family: @text-font, Arial, "Helvetica Neue", Helvetica, sans-serif;
     overflow-x: hidden!important;   
     color: rgba(34, 34, 34, 0.5);
-    
+    height:auto!important;
     
     &.push-left .body-wrapper, &.push-left .menu{
         transform:translateX(80%);
@@ -331,16 +331,15 @@ section.body-wrapper{
             text-align: right;
             font-size: 4rem;
             font-family: musketbold;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 6px 1px rgba(0, 0, 0, 0.08);
             float: right;
         }
         
         aside{
             height: @logoHeight;
-            width: 11rem;
+            width: @logoHeight;
             float: right;
             border-width: 0 1px;
-            line-height:10rem;
+            line-height:@logoHeight;
             cursor:pointer;
             font-size: 5rem;
             transition: 0.5s cubic-bezier(.70, .54, 0, 1);
@@ -382,6 +381,12 @@ section.body-wrapper{
 
         img{height:auto;}
         
+
+        &:hover{
+            #goutte1, #goutte2{
+                transform: translateY(-40px);
+            }
+        }
     }
     nav.nav{
         ul{
@@ -635,6 +640,17 @@ nav.mobile-nav{
                 transform: rotate(90deg);
             }
         }
+
+        .copyright-contact{
+            color: rgba(0, 0, 0, 0.37);
+            position: absolute;
+            bottom: 2rem;
+            font-size: 1.2rem;
+            left: 50%;
+            width: 400px;
+            margin-left: -200px;
+
+        }
     }
     
     
@@ -652,18 +668,24 @@ section#home{
     @media only screen and (max-width: 1024px){
         background-attachment: scroll;
     }
+
     
     #container{
         position:fixed; width:100%; height:100%; z-index:0; opacity:1;
-        &:before{
-            content:" ";
+        &:after{
             width: 100%;
             height: 100%;
+            background: url("http://wagerfield.github.io/flat-surface-shader/assets/styles/../graphics/noise.png");
             position: absolute;
-            top: 0; left: 0;
-            // background: -webkit-radial-gradient(50% 50%, ellipse, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 100%);
-            z-index: 85;
+            opacity: 0.1;
+            content:" ";
+            top: 0;
+            left: 0;
+            z-index:1;
+
         }
+
+
     }
     
     .home-wrapper{
@@ -780,7 +802,7 @@ section#home{
     
     footer{
         bottom: 0;
-        position: fixed;
+        position: absolute;
         left: 0;
         width: 100%;
         
@@ -934,7 +956,7 @@ section#about{
             }
             &:hover{
                 figure{
-                    background: @col1;
+                    background: url('../img/abstract.svg') center center no-repeat @col1;
                     
                     &:after {
                         transform: scale(1);
@@ -963,7 +985,7 @@ section#about{
                 }
                 &:hover{
                     figure{
-                        background: @col2;
+                        background: url('../img/abstract.svg') center center no-repeat @col2;
                         
                         svg{
                             fill: #222222;
@@ -994,7 +1016,7 @@ section#about{
                 }
                 &:hover{
                     figure{
-                        background: @col3;
+                        background: url('../img/abstract.svg') center center no-repeat @col3;
                         svg{
                             fill: #222222;
                         }
@@ -1014,6 +1036,46 @@ section.categories{
     background:@col1;
     perspective: 1200px;
     transform-style: preserve-3d;
+    overflow: hidden;
+
+    &:after{
+        width: 100%;
+        height: 100%;
+        background: url("http://wagerfield.github.io/flat-surface-shader/assets/styles/../graphics/noise.png");
+        position: absolute;
+        opacity: 0.1;
+        content:" ";
+        top: 0;
+        left: 0;
+        z-index:-1;
+
+    }
+
+    .abstract{
+
+        position: absolute;
+        width: 50rem;
+        height: 50rem;
+        top: 50%;
+        left: 50%;
+        margin-left: -25rem;
+        margin-top: -25rem;
+
+        img,svg{
+            width: 50rem;
+            height: 50rem;
+
+            
+            polygon{
+                transition:0.4s ease;
+            }
+
+            polygon:hover{
+                opacity:0.2;
+            }
+        }
+    }
+
 
     article.content{
     }
@@ -1095,6 +1157,7 @@ section.categories{
         transition: color 1s;
         position: relative;
         padding-top: 10rem;
+        pointer-events: none;
 
         @media only screen and (max-width: 1440px){
             font-size: 4.2rem;
@@ -1480,14 +1543,13 @@ section.categories{
         }
     }
     
-    header{background: @col1;}
+
     >header h1{color: white!important;}
     >header h1:before{
         background: white!important;
     }
     
     &.active{
-        header{background: @col1;}
         >header svg{fill: white!important;}
         >header h1{color: white!important}
         >header h1:before{
@@ -1531,11 +1593,6 @@ section.categories{
             width: 14rem;
         }
 
-        
-        header{background: @col2;}
-        &.active{
-            header{background: @col2;}
-        }
 
         .detailled-wrapper{
             header{
@@ -1588,10 +1645,6 @@ section.categories{
             width: 14rem;
         }
         
-        header{background: @col3;}
-        &.active{
-            header{background: @col3;}
-        }
 
         .detailled-wrapper{
             header{
@@ -1618,18 +1671,11 @@ section.categories{
     }
     &.equipe{
         background: @col4;
-        header{background: @col4;}
-        &.active{
-            header{background: @col4;}
-        }
         h1{
             color: @col4;
             &:before{
                 background: @col4;
             }
-        }
-        svg{
-            width: 8rem;
         }
         .text-container{
             margin-bottom: 10rem;
@@ -1659,6 +1705,18 @@ section.categories{
                     background: white;
                     padding: 2rem;
                     text-align: left;
+
+                    &:after{
+                        content: " ";
+                        position: absolute;
+                        width: 15rem;
+                        height: 1px;
+                        background: rgb(136, 136, 136);
+                        bottom: 4rem;
+                        z-index: 500;
+                        margin-left: -7.5rem;
+                        left: 50%;
+                    }
                 }
             }
             .front, .back{
@@ -1701,49 +1759,28 @@ section.categories{
                 aside{
                     position: absolute;
                     z-index: 1;
-                    left: 0;
-                    width: 100%;
-                    height: 4rem;
+                    left: 50%;
+                    width: 10rem;
+                    height: 10rem;
                     top: 50%;
-                    line-height: 4rem;
-                    margin-top: -2rem;
-                    font-size: 2rem;
-                    font-family: @h2-font;
-                    font-style: italic;
+                    line-height: 10rem;
+                    margin-top: -5rem;
+                    font-size: 14rem;
+                    font-family: 'Open Sans';
                     font-weight: 300;
-                    color: white;
-                    letter-spacing: 0.1rem;
-                    transform: translateY(-15rem);
-                    transition: all 0.2s;
-                    overflow: hidden;
-                    &:after{
-                        font-family: 'icomoon';
-                        speak: none;
-                        font-style: normal;
-                        font-weight: normal;
-                        font-variant: normal;
-                        text-transform: none;
-                        line-height: 1;
-                        position: relative;
-                        -webkit-font-smoothing: antialiased;
-                        position: absolute;
-                        height: 100%;
-                        font-size: 80%;
-                        line-height: 2.8;
-                        color: white;
-                        transition: all 0.3s;
-                        content: "r";
-                        left: 120%;
-                        top: 0;
-                        animation-delay:0.5s;
-                    }
+                    color: #fff;
+                    margin-left: -5rem;
+                    opacity:0;
+                    transform: rotateY(360deg) translateY(-30px);
+                    transition: 0.5s all;
+
                 }
                 &:before{
                     /* Eviter le glitch chrome overflow:hidden quand transition */
                     content: " ";
                     position: absolute;
                     width: 80%; height: 100%;
-                    background: @col4;
+                    background: url(../img/abstract.svg) center center no-repeat #FF9776;
                     margin-left: 10%;
                     top: 0;
                     left: 0;
@@ -1788,13 +1825,11 @@ section.categories{
                         opacity:0.2;
                     }
                     h3{
-                        color:  darken(@col4,10%);
+                        //color:  darken(@col4,10%);
                     }
                     aside{
-                        transform: translateY(0);
-                        &:after{
-                            left: 74%;
-                        }
+                        transform: rotateY(0deg) translateY(0px);
+                        opacity: 1;
                     }
                 }
             }
@@ -1802,12 +1837,7 @@ section.categories{
     }  
     &.references{
         background: @col5;
-        header{background: @col5;}
         padding-bottom: 15rem;
-
-        &.active{
-            header{background: @col5;}
-        }
         h1{
             color: @col5;
             &:before{
@@ -1820,6 +1850,10 @@ section.categories{
             bottom: -2rem;
         }
         
+        .content{
+            pointer-events:none;
+        }
+
         a.discover{
             background: @col5;
             border: 4px solid @col5;
@@ -1873,15 +1907,22 @@ section.categories{
         }
     }
     .quote{
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-family: @text-font;
         margin-top: 2rem;
+        color: rgba(255,255,255,0.5);
+
+        span{
+            color: rgba(255,255,255,0.8);
+            font-weight: 400;
+        }
     }
 }
 
 footer.contact-footer{
     height:50rem;
     background:url('../img/black_lozenge.png');
+    background-attachment: fixed;
     
     .last-sentence{
         position: fixed;
@@ -1891,6 +1932,10 @@ footer.contact-footer{
         font-weight: 300;
         left: 50%;
         transform: translateX(-50%);
+
+        @media only screen and (max-width: 1280px){
+            font-size: 4em;
+        }
     }
 
     a.contact-button{
@@ -1963,7 +2008,9 @@ footer.contact-footer{
 
 
 
-
+#goutte1, #goutte2{
+    transition:0.5s ease;
+}
 
 
 #goutte1{
