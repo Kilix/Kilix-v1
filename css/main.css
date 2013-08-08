@@ -852,15 +852,15 @@ section#home .lead-text span:nth-child(5) span:last-child {
 }
 
 section#home footer {
-  bottom: 0;
+  bottom: -15rem;
   position: absolute;
   left: 0;
   width: 100%;
 }
 
 section#home footer a {
-  font-size: 45px;
-  font-size: 4.5rem;
+  font-size: 60px;
+  font-size: 6rem;
   font-weight: bold;
   color: #b0b0b0;
   -webkit-transition: color  0.5s;
@@ -881,6 +881,18 @@ section#about {
   padding-top: 20rem;
   position: relative;
   background: white;
+}
+
+section#about:after {
+  width: 100%;
+  height: 100%;
+  background: url("http://wagerfield.github.io/flat-surface-shader/assets/styles/../graphics/noise.png");
+  position: absolute;
+  opacity: 0.1;
+  content: " ";
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 section#about header {
@@ -1162,12 +1174,14 @@ section.categories .abstract {
   left: 50%;
   margin-left: -25rem;
   margin-top: -25rem;
+  -webkit-animation: levitate 5s infinite;
+  animation: levitate 5s infinite;
 }
 
 section.categories .abstract img,
 section.categories .abstract svg {
-  width: 50rem;
-  height: 50rem;
+  width: 100%;
+  height: 100%;
 }
 
 section.categories .abstract img polygon,
@@ -1179,6 +1193,43 @@ section.categories .abstract svg polygon {
 section.categories .abstract img polygon:hover,
 section.categories .abstract svg polygon:hover {
   opacity: 0.2;
+}
+
+@-webkit-keyframes levitate {
+  0% {
+    -webkit-transform: translateY(-25px);
+    transform: translateY(-25px);
+  }
+
+  50% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-25px);
+    transform: translateY(-25px);
+  }
+}
+
+@keyframes levitate {
+  0% {
+    -webkit-transform: translateY(-25px);
+    -ms-transform: translateY(-25px);
+    transform: translateY(-25px);
+  }
+
+  50% {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-25px);
+    -ms-transform: translateY(-25px);
+    transform: translateY(-25px);
+  }
 }
 
 section.categories section.but-wait-there-is-more {
@@ -1360,6 +1411,7 @@ section.categories a.discover {
   padding-left: 3.2rem;
   border-radius: 6px;
   line-height: 4rem;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 section.categories a.discover span {
@@ -1376,6 +1428,7 @@ section.categories a.discover:hover {
   width: 18rem;
   font-weight: '400';
   border-color: #ffffff;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 section.categories a.discover:hover:after {
@@ -1408,6 +1461,7 @@ section.categories a.discover.loading {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
+  border-color: transparent;
 }
 
 section.categories a.discover.loading:after {
@@ -1850,7 +1904,8 @@ section.categories.expertise .detailled-content .detailled-wrapper footer a.undi
 }
 
 section.categories.equipe {
-  background: #85cedf;
+  background: url(../img/abstract-4.svg) 50% 117% no-repeat #85cedf;
+  background-size: 100%;
 }
 
 section.categories.equipe h1 {

@@ -801,13 +801,13 @@ section#home{
     }
     
     footer{
-        bottom: 0;
+        bottom: -15rem;
         position: absolute;
         left: 0;
         width: 100%;
         
         a{
-            .font-size(4.5);
+            .font-size(6);
             font-weight:bold;
             color:@gris1;
             transition: color  0.5s;
@@ -826,6 +826,19 @@ section#about{
     padding-top: 20rem; 
     position: relative;
     background:white;
+
+    &:after{
+        width: 100%;
+        height: 100%;
+        background: url("http://wagerfield.github.io/flat-surface-shader/assets/styles/../graphics/noise.png");
+        position: absolute;
+        opacity: 0.1;
+        content:" ";
+        top: 0;
+        left: 0;
+        z-index:-1;
+
+    }
     
     header{
         position: relative;
@@ -1060,10 +1073,11 @@ section.categories{
         left: 50%;
         margin-left: -25rem;
         margin-top: -25rem;
+        animation: levitate 5s infinite;
 
         img,svg{
-            width: 50rem;
-            height: 50rem;
+            width: 100%;
+            height: 100%;
 
             
             polygon{
@@ -1073,6 +1087,18 @@ section.categories{
             polygon:hover{
                 opacity:0.2;
             }
+        }
+    }
+
+    @keyframes levitate{
+        0%{
+            transform: translateY(-25px);
+        }
+        50%{
+            transform: translateY(0px);
+        }
+        100%{
+           transform: translateY(-25px);
         }
     }
 
@@ -1228,7 +1254,7 @@ section.categories{
         padding-left: 3.2rem;
         border-radius: 6px;
         line-height: 4rem;
-        
+        background: rgba(0,0,0,0.05);
         span{
             transition: color 0.3s;
         }
@@ -1241,6 +1267,7 @@ section.categories{
             width: 18rem;
             font-weight: '400';
             border-color: rgba(255,255,255,1);
+            background: rgba(0,0,0,0.1);
             &:after{
                 left: 85%;
             }
@@ -1271,6 +1298,7 @@ section.categories{
             width: 6rem;
             height: 6rem;
             border-radius: 50%;
+            border-color:transparent;
             &:after{
                 opacity:0!important;
             }
@@ -1670,7 +1698,8 @@ section.categories{
         }
     }
     &.equipe{
-        background: @col4;
+        background: url(../img/abstract-4.svg) 50% 117% no-repeat @col4;
+        background-size: 100%;
         h1{
             color: @col4;
             &:before{

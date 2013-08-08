@@ -64,7 +64,7 @@ if(Modernizr.canvas){
 	  var LIGHT = {
 	    count: 2,
 	    xyScalar: 1,
-	    zOffset: 130,
+	    zOffset: 100,
 	    ambient: col1,
 	    diffuse: col2,
 	    speed: 0.001,

@@ -39,7 +39,7 @@ var Kilix = {
         
         /* --- INIT CANVAS --- */
         if(!isMobile && Modernizr.canvas){
-            createCanvasIn('container',             '#ffffff',          '#989898',          '#555555',  '#ffffff',          18,     9,      0.8,        0.1);
+            createCanvasIn('container',             '#ffffff',          '#989898',          '#555555',  '#ffffff',          22,     12,      0.8,        0.1);
         }
     },
     resize: function(){
@@ -243,7 +243,7 @@ var Kilix = {
             
             
 
-            pageTwo.scrollTop(0);
+            
             
             pageTwo.find('.inception-detailled-wrapper').transition({
                 marginTop:$(window).height()
@@ -271,7 +271,7 @@ var Kilix = {
                     var outClass = 'pt-page-moveFromRightFade pt-page-ontop';
                     pageFirst.addClass(inClass);
 
-
+                    $('.detailled-wrapper').scrollTop(0);
                     pageTwo.addClass(outClass + ' current');
                     $('.menu .right').transition({
                         y: '-10rem'
@@ -307,8 +307,7 @@ var Kilix = {
             Kilix.isCateg = false;
             pageTwo.addClass(inClass);
             pageFirst.addClass(outClass + ' current');
-            //$('#logo').removeClass('disabled');
-
+            
             $('.menu .right').transition({
                 y: '0rem'
             },600, 'snap',function(){
