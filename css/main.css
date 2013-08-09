@@ -757,6 +757,7 @@ section#home .lead-text {
   font-size: 50px;
   font-size: 5rem;
   text-align: center;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
   font-family: 'Open Sans';
   line-height: 7rem;
   color: #757575;
@@ -1253,7 +1254,7 @@ section.categories section.current {
 
 section.categories header {
   position: relative;
-  padding-top: 10rem;
+  padding-top: 5rem;
   -webkit-transition: background 1s;
   transition: background 1s;
 }
@@ -1323,7 +1324,7 @@ section.categories .punch-line {
   -webkit-transition: color 1s;
   transition: color 1s;
   position: relative;
-  padding-top: 10rem;
+  padding-top: 2rem;
   pointer-events: none;
 }
 
@@ -1929,7 +1930,6 @@ section.categories.equipe .team-container .front {
   backface-visibility: hidden;
   position: relative;
   z-index: 2;
-  overflow: hidden;
 }
 
 section.categories.equipe .team-container .back {
@@ -1958,6 +1958,7 @@ section.categories.equipe .team-container .back p {
   background: white;
   padding: 2rem;
   text-align: left;
+  box-shadow: 0 0px 0px 10px rgba(0, 0, 0, 0.06);
 }
 
 section.categories.equipe .team-container .back p:after {
@@ -1976,6 +1977,7 @@ section.categories.equipe .team-container .front,
 section.categories.equipe .team-container .back {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  pointer-events: none;
 }
 
 section.categories.equipe .team-container article {
@@ -2004,12 +2006,14 @@ section.categories.equipe .team-container input:checked ~ .front {
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  visibility: hidden;
 }
 
 section.categories.equipe .team-container input:checked ~ .back {
   -webkit-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
   transform: rotateY(0deg);
+  visibility: visible;
   z-index: 500;
 }
 
@@ -2058,6 +2062,9 @@ section.categories.equipe .team-container .figure-wrapper:before {
   top: 0;
   left: 0;
   border-radius: 50%;
+  box-shadow: 0 0px 0px 10px rgba(0, 0, 0, 0.06);
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s;
 }
 
 section.categories.equipe .team-container figure {

@@ -739,6 +739,7 @@ section#home{
     .lead-text{
         .font-size(5);
         text-align: center;
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
         font-family: @lead-text;
         line-height: 7rem;
         color: rgb(117, 117, 117);
@@ -1119,7 +1120,7 @@ section.categories{
     }
     header{
         position: relative;
-        padding-top: 10rem;
+        padding-top: 5rem;
         transition: background 1s;
         canvas{
             position: absolute;
@@ -1182,7 +1183,7 @@ section.categories{
         font-weight: lighter;
         transition: color 1s;
         position: relative;
-        padding-top: 10rem;
+        padding-top: 2rem;
         pointer-events: none;
 
         @media only screen and (max-width: 1440px){
@@ -1716,7 +1717,6 @@ section.categories{
                 backface-visibility: hidden;
                 position: relative;
                 z-index: 2;
-                overflow: hidden;
             }
             .back{
                 position: absolute;
@@ -1734,6 +1734,7 @@ section.categories{
                     background: white;
                     padding: 2rem;
                     text-align: left;
+                    box-shadow: 0 0px 0px 10px rgba(0, 0, 0, 0.06);
 
                     &:after{
                         content: " ";
@@ -1750,6 +1751,7 @@ section.categories{
             }
             .front, .back{
                 transition: all 0.2s; 
+                pointer-events:none;
             }
             article{
                 transition: all 0.8s;
@@ -1770,11 +1772,11 @@ section.categories{
             }
             input:checked ~ .front
             {
-                transform: rotateY(180deg);
+                transform: rotateY(180deg);visibility: hidden;
             }
             input:checked ~ .back
             {
-                transform: rotateY(0deg);
+                transform: rotateY(0deg);visibility: visible;
                 z-index:500;
             }
             .figure-wrapper{
@@ -1814,6 +1816,8 @@ section.categories{
                     top: 0;
                     left: 0;
                     border-radius: 50%;
+                    box-shadow: 0 0px 0px 10px rgba(0, 0, 0, 0.06);
+                    transition:box-shadow 0.2s;
                 }
             }
             figure{
@@ -1850,6 +1854,8 @@ section.categories{
             
             @media only screen and (min-width: 768px){
                 article:hover{
+                    .figure-wrapper:before{
+                    }
                     figure{
                         opacity:0.2;
                     }
