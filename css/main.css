@@ -760,7 +760,7 @@ section#home .lead-text {
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
   font-family: 'Open Sans';
   line-height: 7rem;
-  color: #757575;
+  color: #585858;
   position: fixed;
   top: 70%;
   width: 100rem;
@@ -879,7 +879,7 @@ section#home footer a:hover {
 /*--------------*/
 
 section#about {
-  padding-top: 20rem;
+  padding-top: 10rem;
   position: relative;
   background: white;
 }
@@ -954,7 +954,6 @@ section#about .devices {
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  margin-top: 10rem;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -1296,6 +1295,12 @@ section.categories header .svg-container svg {
   -webkit-filter: drop-shadow(0 15px 0px rgba(0, 0, 0, 0.08));
 }
 
+@media only screen and (max-width: 1440px) {
+  section.categories header h1 {
+    font-size: 6rem;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   section.categories header {
     padding: 6rem 0;
@@ -1330,7 +1335,7 @@ section.categories .punch-line {
 
 @media only screen and (max-width: 1440px) {
   section.categories .punch-line {
-    font-size: 4.2rem;
+    font-size: 3.8rem;
     line-height: 6.5rem;
   }
 }
@@ -1413,6 +1418,12 @@ section.categories a.discover {
   border-radius: 6px;
   line-height: 4rem;
   background: rgba(0, 0, 0, 0.05);
+}
+
+@media only screen and (max-width: 1440px) {
+  section.categories a.discover {
+    margin: 3rem 0 10rem;
+  }
 }
 
 section.categories a.discover span {
@@ -2090,7 +2101,6 @@ section.categories.equipe .team-container figure img {
 section.categories.equipe .team-container h3 {
   font-family: 'Open Sans';
   font-size: 3.8rem;
-  text-transform: uppercase;
   margin-top: 3rem;
   margin-bottom: 0;
   color: #fff;
@@ -2232,9 +2242,15 @@ footer.contact-footer .last-sentence {
   transform: translateX(-50%);
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1440px) {
   footer.contact-footer .last-sentence {
-    font-size: 4em;
+    font-size: 3.5em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  footer.contact-footer .last-sentence {
+    font-size: 2.5em;
   }
 }
 

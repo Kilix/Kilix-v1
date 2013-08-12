@@ -43,7 +43,9 @@ var Kilix = {
         }
     },
     resize: function(){
-        $('#home').width($(window).width());
+
+        isMobile = (/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent) || window.matchMedia("only screen and (max-width: 1280px)").matches; 
+
         $('#home').height(isMobile?$(window).height():3000);
         $('.height-full-centered').css({
             'height': $(window).height(),
