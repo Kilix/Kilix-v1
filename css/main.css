@@ -1972,16 +1972,18 @@ section.categories.equipe .team-container .back p {
   box-shadow: 0 0px 0px 10px rgba(0, 0, 0, 0.06);
 }
 
-section.categories.equipe .team-container .back p:after {
-  content: " ";
-  position: absolute;
-  width: 15rem;
-  height: 1px;
-  background: #888888;
-  bottom: 4rem;
-  z-index: 500;
-  margin-left: -7.5rem;
-  left: 50%;
+@media only screen and (min-width: 768px) {
+  section.categories.equipe .team-container .back p:after {
+    content: " ";
+    position: absolute;
+    width: 15rem;
+    height: 1px;
+    background: #888888;
+    bottom: 4rem;
+    z-index: 500;
+    margin-left: -7.5rem;
+    left: 50%;
+  }
 }
 
 section.categories.equipe .team-container .front,
@@ -2113,6 +2115,19 @@ section.categories.equipe .team-container h4 {
   font-family: 'Open Sans';
   color: #fff;
   font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 768px) {
+  section.categories.equipe .team-container article figure {
+    opacity: 0.6!important;
+  }
+
+  section.categories.equipe .team-container article aside {
+    -webkit-transform: rotateY(0deg) translateY(0px) !important;
+    -ms-transform: rotateY(0deg) translateY(0px) !important;
+    transform: rotateY(0deg) translateY(0px) !important;
+    opacity: 1!important;
+  }
 }
 
 @media only screen and (min-width: 768px) {

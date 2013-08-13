@@ -1751,18 +1751,22 @@ section.categories{
                     padding: 2rem;
                     text-align: left;
                     box-shadow: 0 0px 0px 10px rgba(0, 0, 0, 0.06);
+                    
 
-                    &:after{
-                        content: " ";
-                        position: absolute;
-                        width: 15rem;
-                        height: 1px;
-                        background: rgb(136, 136, 136);
-                        bottom: 4rem;
-                        z-index: 500;
-                        margin-left: -7.5rem;
-                        left: 50%;
-                    }
+                    @media only screen and (min-width: 768px){
+                        &:after{
+                            content: " ";
+                            position: absolute;
+                            width: 15rem;
+                            height: 1px;
+                            background: rgb(136, 136, 136);
+                            bottom: 4rem;
+                            z-index: 500;
+                            margin-left: -7.5rem;
+                            left: 50%;
+                        }
+                
+                    }      
                 }
             }
             .front, .back{
@@ -1865,6 +1869,21 @@ section.categories{
                 font-family: @h2-font;
                 color: #fff;
                 font-size: 1.6rem;
+            }
+
+
+            @media only screen and (max-width: 768px){
+                article{
+                    figure{
+                        opacity:0.6!important;
+                    }
+                    aside{
+                        transform: rotateY(0deg) translateY(0px)!important;
+                        opacity: 1!important;
+                    }
+
+                }
+                
             }
             
             @media only screen and (min-width: 768px){
