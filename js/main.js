@@ -334,6 +334,32 @@ var Kilix = {
         out: function(){
             Kilix.changeXColor($('#home svg polygon'), 'none')
         }
+    },
+    mouseWheelFix:function(){
+        document.attachEvent('onmousewheel', function(e){
+             if (!e) var e = window.event;
+             e.returnValue = false;
+             e.cancelBubble = true;
+             return false;
+        }, false);
+        document.addEventListener('mousewheel', function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            e.cancelBubble = false;
+            return false;
+        }, false);
+        document.attachEvent('mousewheel', function(e){
+            if (!e) var e = window.event;
+            e.returnValue = false;
+            e.cancelBubble = true;
+            return false;
+        }, false);
+        document.addEventListener('DOMMouseScroll', function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            e.cancelBubble = false;
+            return false;
+        }, false);
     }
 }
 $(function() {
