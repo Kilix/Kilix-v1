@@ -340,6 +340,7 @@ var Kilix = {
     },
     mouseWheelFix:function(){
         $('body').mousedown(function(e){if(e.button==1)return false});
+        
     }
 }
 $(function() {
