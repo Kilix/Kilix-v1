@@ -2241,7 +2241,7 @@ section.categories .quote span {
 }
 
 footer.contact-footer {
-  height: 50rem;
+  height: 60rem;
   background: url('../img/black_lozenge.png');
   background-attachment: fixed;
 }
@@ -2356,6 +2356,10 @@ h1#logo.animated #goutte2 {
   animation-timing-function: ease;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+.ico {
+  font-family: 'icomoon';
 }
 
 @-webkit-keyframes bounce {
