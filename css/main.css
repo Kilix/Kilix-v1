@@ -1312,7 +1312,7 @@ section.categories header .svg-container {
 section.categories header .svg-container svg {
   width: 13rem;
   height: 13rem;
-  fill: rgba(0, 0, 0, 0.08);
+  fill: white;
   -webkit-transition: fill 1s;
   transition: fill 1s;
   position: relative;
@@ -2150,15 +2150,11 @@ section.categories.equipe .team-container h4 {
 }
 
 @media only screen and (max-width: 768px) {
-  section.categories.equipe .team-container article figure {
-    opacity: 0.6!important;
-  }
-
   section.categories.equipe .team-container article aside {
     -webkit-transform: rotateY(0deg) translateY(0px) !important;
     -ms-transform: rotateY(0deg) translateY(0px) !important;
     transform: rotateY(0deg) translateY(0px) !important;
-    opacity: 1!important;
+    opacity: 0!important;
   }
 }
 
@@ -2193,10 +2189,6 @@ section.categories.references .detailled-content .detailled-wrapper header .svg-
   bottom: -2rem;
 }
 
-section.categories.references .content {
-  pointer-events: none;
-}
-
 section.categories.references a.discover {
   background: #087ec2;
   border: 4px solid #087ec2;
@@ -2215,6 +2207,12 @@ section.categories.references .square {
   padding-bottom: 33.3%;
   background: url('../img/references.png');
   background-size: 300%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+section.categories.references .square:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (max-width: 768px) {
@@ -2276,7 +2274,13 @@ footer.contact-footer {
   background: url(../img/background-end.JPG);
   background-attachment: fixed;
   background-size: cover;
-  background-position-y: -50%;
+}
+
+@media only screen and (max-width: 768px) {
+  footer.contact-footer {
+    background-attachment: scroll;
+    height: 50rem;
+  }
 }
 
 footer.contact-footer .last-sentence {

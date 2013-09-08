@@ -1157,7 +1157,7 @@ section.categories{
             svg{
                 width: 13rem;
                 height: 13rem;
-                fill: rgba(0,0,0,.08);
+                fill: white;
                 transition: fill 1s;
                 position: relative;
                 -webkit-filter: drop-shadow(0 15px 0px rgba(0, 0, 0, 0.08));
@@ -1888,12 +1888,9 @@ section.categories{
 
             @media only screen and (max-width: 768px){
                 article{
-                    figure{
-                        opacity:0.6!important;
-                    }
                     aside{
                         transform: rotateY(0deg) translateY(0px)!important;
-                        opacity: 1!important;
+                        opacity: 0!important;
                     }
 
                 }
@@ -1934,7 +1931,7 @@ section.categories{
         }
         
         .content{
-            pointer-events:none;
+            
         }
 
         a.discover{
@@ -1953,6 +1950,11 @@ section.categories{
             padding-bottom: 33.3%;
             background: url('../img/references.png');
             background-size: 300%;
+            transition: 0.5s;
+
+            &:hover{
+                background-color: rgba(0,0,0,0.1);
+            }
 
             @media only screen and (max-width: 768px){
                 padding-bottom: 50%;
@@ -2007,7 +2009,11 @@ footer.contact-footer{
     background: url(../img/background-end.JPG);
     background-attachment: fixed;
     background-size: cover;
-    background-position-y: -50%;
+
+    @media only screen and (max-width: 768px){
+        background-attachment: scroll;
+        height:50rem;
+    }
     
     .last-sentence{
         position: fixed;
