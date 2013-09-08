@@ -126,6 +126,24 @@ textarea {
   }
 }
 
+.ie9 .lead-text {
+  margin-left: -50rem;
+  margin-top: -14rem;
+}
+
+.ie9 .team-container label span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  text-indent: -5000px;
+  -webkit-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
 body {
   text-align: center;
   font-family: 'Open Sans', Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -1168,12 +1186,12 @@ section.categories:after {
 
 section.categories .abstract {
   position: absolute;
-  width: 50rem;
-  height: 50rem;
+  width: 150rem;
+  height: 150rem;
   top: 50%;
   left: 50%;
   margin-left: -25rem;
-  margin-top: -25rem;
+  margin-top: -40rem;
   -webkit-animation: levitate 5s infinite;
   animation: levitate 5s infinite;
 }
@@ -1188,11 +1206,17 @@ section.categories .abstract img polygon,
 section.categories .abstract svg polygon {
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
 }
 
 section.categories .abstract img polygon:hover,
 section.categories .abstract svg polygon:hover {
   opacity: 0.2;
+  -webkit-transform: rotateZ(30deg);
+  -ms-transform: rotateZ(30deg);
+  transform: rotateZ(30deg);
 }
 
 @-webkit-keyframes levitate {
@@ -1441,6 +1465,7 @@ section.categories a.discover:hover {
   font-weight: '400';
   border-color: #ffffff;
   background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 0px 3000px rgba(0, 0, 0, 0.4);
 }
 
 section.categories a.discover:hover:after {
@@ -1960,6 +1985,7 @@ section.categories.equipe .team-container .back {
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 1;
+  visibility: hidden;
 }
 
 section.categories.equipe .team-container .back p {
@@ -2013,6 +2039,11 @@ section.categories.equipe .team-container label {
   z-index: 999;
   cursor: pointer;
   z-index: 1000;
+}
+
+section.categories.equipe .team-container label span {
+  text-indent: -5000px;
+  display: inline-block;
 }
 
 section.categories.equipe .team-container input:checked ~ .front {
@@ -2241,9 +2272,11 @@ section.categories .quote span {
 }
 
 footer.contact-footer {
-  height: 60rem;
-  background: url('../img/black_lozenge.png');
+  height: 70rem;
+  background: url(../img/background-end.JPG);
   background-attachment: fixed;
+  background-size: cover;
+  background-position-y: -50%;
 }
 
 footer.contact-footer .last-sentence {
