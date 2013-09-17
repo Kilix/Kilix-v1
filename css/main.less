@@ -191,6 +191,7 @@ textarea {
 .ie9 .team-container label span {width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: white; text-indent:-5000px; filter : alpha(opacity=0);
     opacity : 0;}
 
+
 body{
     text-align: center;
     font-family: @text-font, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -1078,12 +1079,12 @@ section.categories{
     .abstract{
 
         position: absolute;
-        width: 150rem;
-        height: 150rem;
+        width: 50rem;
+        height: 50rem;
         top: 50%;
         left: 50%;
         margin-left: -25rem;
-        margin-top: -40rem;
+        margin-top: -25rem;
         animation: levitate 5s infinite;
 
         img,svg{
@@ -1093,12 +1094,10 @@ section.categories{
             
             polygon{
                 transition:0.4s ease;
-                transform-origin: 50% 50%;
             }
 
             polygon:hover{
                 opacity:0.2;
-                transform: rotateZ(30deg);
             }
         }
     }
@@ -1163,7 +1162,7 @@ section.categories{
             svg{
                 width: 13rem;
                 height: 13rem;
-                fill: white;
+                fill: rgba(0,0,0,.08);
                 transition: fill 1s;
                 position: relative;
                 -webkit-filter: drop-shadow(0 15px 0px rgba(0, 0, 0, 0.08));
@@ -1298,7 +1297,6 @@ section.categories{
             font-weight: '400';
             border-color: rgba(255,255,255,1);
             background: rgba(0,0,0,0.1);
-            box-shadow: 0px 0px 0px 3000px rgba(0,0,0,0.4);
             &:after{
                 left: 85%;
             }
@@ -1955,11 +1953,6 @@ section.categories{
             padding-bottom: 33.3%;
             background: url('../img/references.png');
             background-size: 300%;
-            transition: 0.5s;
-
-            &:hover{
-                background-color: rgba(0,0,0,0.1);
-            }
 
             transition: 0.5s;
  
@@ -2020,7 +2013,7 @@ footer.contact-footer{
     background: url(../img/background-end.JPG);
     background-attachment: fixed;
     background-size: cover;
-
+ 
     @media only screen and (max-width: 768px){
         background-attachment: scroll;
         height:50rem;
@@ -2139,10 +2132,6 @@ h1#logo.animated{
     font-family: 'icomoon';
 }
 
-.ico{
-    font-family: 'icomoon';
-}
-
 @keyframes bounce{
      from {transform: translateY(0);}
      50%  {transform: translateY(-20px);}
@@ -2159,21 +2148,21 @@ body{visibility:hidden;}
     background-color: #E4E4E4;
 }
 #jpreSlide{
-	font-size:22px;
-	font-weight:bold;
-	color:#ccc;
-	text-align:center;
-	width:50%;
-	height:30%;
+    font-size:22px;
+    font-weight:bold;
+    color:#ccc;
+    text-align:center;
+    width:50%;
+    height:30%;
 }
 #jpreLoader{
-	width:300px;
-	height:5px;
+    width:300px;
+    height:5px;
 
 }
 #jpreBar {
 
-	transition: all 0.3s;	
+    transition: all 0.3s;   
     width:300px!important;
     position:relative;
     
@@ -2200,7 +2189,7 @@ body{visibility:hidden;}
     }
 }
 #jprePercentage {
-	color: #000;
+    color: #000;
     font-weight: lighter;
     text-align: center;
     top: 2rem;
@@ -2230,23 +2219,23 @@ body{visibility:hidden;}
 
 .pt-page-moveToLeftEasing {
     -webkit-animation: moveToLeft .7s ease-in-out both;
-	-moz-animation: moveToLeft .7s ease-in-out both;
-	animation: moveToLeft .7s ease-in-out both;
+    -moz-animation: moveToLeft .7s ease-in-out both;
+    animation: moveToLeft .7s ease-in-out both;
 }
 .pt-page-moveToRightEasing {
-	-webkit-animation: moveToRight .7s ease-in-out both;
-	-moz-animation: moveToRight .7s ease-in-out both;
-	animation: moveToRight .7s ease-in-out both;
+    -webkit-animation: moveToRight .7s ease-in-out both;
+    -moz-animation: moveToRight .7s ease-in-out both;
+    animation: moveToRight .7s ease-in-out both;
 }
 .pt-page-moveFromLeftFade {
     -webkit-animation: moveFromLeftFade .7s ease both;
-	-moz-animation: moveFromLeftFade .7s ease both;
-	animation: moveFromLeftFade .7s ease both;
+    -moz-animation: moveFromLeftFade .7s ease both;
+    animation: moveFromLeftFade .7s ease both;
 }
 .pt-page-moveFromRightFade {
-	-webkit-animation: moveFromRightFade .7s ease both;
-	-moz-animation: moveFromRightFade .7s ease both;
-	animation: moveFromRightFade .7s ease both;
+    -webkit-animation: moveFromRightFade .7s ease both;
+    -moz-animation: moveFromRightFade .7s ease both;
+    animation: moveFromRightFade .7s ease both;
 }
 
 @keyframes moveToLeft {
@@ -2258,12 +2247,12 @@ body{visibility:hidden;}
 }
 
 @keyframes moveFromLeftFade {
-	from { opacity: 0.3; transform: translateX(-100%); }
+    from { opacity: 0.3; transform: translateX(-100%); }
 }
 
 
 @keyframes moveFromRightFade {
-	from { opacity: 0}
+    from { opacity: 0}
 }
 
 
