@@ -406,7 +406,6 @@ section.body-wrapper{
             line-height: 10rem;
             transition: color 0.5s;
             cursor:pointer;
-            font-weight:700;
             
             @media only screen and (max-width: 1024px){
                 font-size: 1.3rem;
@@ -491,7 +490,7 @@ nav.mobile-nav{
         }
         
         ul{
-            margin:0; padding: 0;
+            margin:50px 0 0 0; padding: 0;
         }
         h4{
             color: #FFF;
@@ -519,9 +518,16 @@ nav.mobile-nav{
         
         .mobile-close{
             position: absolute;
-            right: 0;
-            top: 1.65rem;
-            font-size: 150%;
+            right: 5rem;
+            top: 0;
+            color: #8B8B8B;
+            font-size: 5rem;
+            z-index: 3;
+            transition: 0.5s cubic-bezier(.70, .54, 0, 1);
+            
+            &:hover{
+                transform: rotate(90deg);
+            }
         }
     }
     
@@ -958,7 +964,7 @@ section#about{
             }
             h3{
                 .font-size(2.8);
-                font-family: @h2-font;
+                font-family: 'musketbold';
                 text-transform: uppercase;
                 transition: background 0.2s, color 0.2s;
                 color:@gris1;

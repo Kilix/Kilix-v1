@@ -435,7 +435,6 @@ section.body-wrapper {
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
   cursor: pointer;
-  font-weight: 700;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -519,7 +518,7 @@ nav.mobile-nav.open {
 }
 
 nav.mobile-nav ul {
-  margin: 0;
+  margin: 50px 0 0 0;
   padding: 0;
 }
 
@@ -550,9 +549,19 @@ nav.mobile-nav li:hover {
 
 nav.mobile-nav .mobile-close {
   position: absolute;
-  right: 0;
-  top: 1.65rem;
-  font-size: 150%;
+  right: 5rem;
+  top: 0;
+  color: #8B8B8B;
+  font-size: 5rem;
+  z-index: 3;
+  -webkit-transition: 0.5s cubic-bezier(0.7, 0.54, 0, 1);
+  transition: 0.5s cubic-bezier(0.7, 0.54, 0, 1);
+}
+
+nav.mobile-nav .mobile-close:hover {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .contact-info {
@@ -1061,7 +1070,7 @@ section#about .item-container article .figure-wrapper figure:after {
 section#about .item-container article h3 {
   font-size: 28px;
   font-size: 2.8rem;
-  font-family: 'Open Sans';
+  font-family: 'musketbold';
   text-transform: uppercase;
   -webkit-transition: background 0.2s, color 0.2s;
   transition: background 0.2s, color 0.2s;
