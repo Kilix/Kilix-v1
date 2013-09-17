@@ -1195,12 +1195,12 @@ section.categories:after {
 
 section.categories .abstract {
   position: absolute;
-  width: 50rem;
-  height: 50rem;
+  width: 150rem;
+  height: 150rem;
   top: 50%;
   left: 50%;
   margin-left: -25rem;
-  margin-top: -25rem;
+  margin-top: -40rem;
   -webkit-animation: levitate 5s infinite;
   animation: levitate 5s infinite;
 }
@@ -1215,11 +1215,17 @@ section.categories .abstract img polygon,
 section.categories .abstract svg polygon {
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
 }
 
 section.categories .abstract img polygon:hover,
 section.categories .abstract svg polygon:hover {
   opacity: 0.2;
+  -webkit-transform: rotateZ(30deg);
+  -ms-transform: rotateZ(30deg);
+  transform: rotateZ(30deg);
 }
 
 @-webkit-keyframes levitate {
@@ -1315,7 +1321,7 @@ section.categories header .svg-container {
 section.categories header .svg-container svg {
   width: 13rem;
   height: 13rem;
-  fill: rgba(0, 0, 0, 0.08);
+  fill: white;
   -webkit-transition: fill 1s;
   transition: fill 1s;
   position: relative;
@@ -1468,6 +1474,7 @@ section.categories a.discover:hover {
   font-weight: '400';
   border-color: #ffffff;
   background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 0px 3000px rgba(0, 0, 0, 0.4);
 }
 
 section.categories a.discover:hover:after {
@@ -2217,6 +2224,10 @@ section.categories.references .square:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+section.categories.references .square:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 @media only screen and (max-width: 768px) {
   section.categories.references .square {
     padding-bottom: 50%;
@@ -2395,6 +2406,10 @@ h1#logo.animated #goutte2 {
   animation-timing-function: ease;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+.ico {
+  font-family: 'icomoon';
 }
 
 .ico {
