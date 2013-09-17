@@ -126,6 +126,24 @@ textarea {
   }
 }
 
+.ie9 .lead-text {
+  margin-left: -50rem;
+  margin-top: -14rem;
+}
+
+.ie9 .team-container label span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  text-indent: -5000px;
+  -webkit-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
 body {
   text-align: center;
   font-family: 'Open Sans', Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -1960,6 +1978,7 @@ section.categories.equipe .team-container .back {
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 1;
+  visibility: hidden;
 }
 
 section.categories.equipe .team-container .back p {
@@ -2013,6 +2032,11 @@ section.categories.equipe .team-container label {
   z-index: 999;
   cursor: pointer;
   z-index: 1000;
+}
+
+section.categories.equipe .team-container label span {
+  text-indent: -5000px;
+  display: inline-block;
 }
 
 section.categories.equipe .team-container input:checked ~ .front {
@@ -2119,15 +2143,11 @@ section.categories.equipe .team-container h4 {
 }
 
 @media only screen and (max-width: 768px) {
-  section.categories.equipe .team-container article figure {
-    opacity: 0.6!important;
-  }
-
   section.categories.equipe .team-container article aside {
     -webkit-transform: rotateY(0deg) translateY(0px) !important;
     -ms-transform: rotateY(0deg) translateY(0px) !important;
     transform: rotateY(0deg) translateY(0px) !important;
-    opacity: 1!important;
+    opacity: 0!important;
   }
 }
 
@@ -2162,10 +2182,6 @@ section.categories.references .detailled-content .detailled-wrapper header .svg-
   bottom: -2rem;
 }
 
-section.categories.references .content {
-  pointer-events: none;
-}
-
 section.categories.references a.discover {
   background: #087ec2;
   border: 4px solid #087ec2;
@@ -2184,6 +2200,12 @@ section.categories.references .square {
   padding-bottom: 33.3%;
   background: url('../img/references.png');
   background-size: 300%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+section.categories.references .square:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (max-width: 768px) {
@@ -2241,9 +2263,17 @@ section.categories .quote span {
 }
 
 footer.contact-footer {
-  height: 50rem;
-  background: url('../img/black_lozenge.png');
+  height: 70rem;
+  background: url(../img/background-end.JPG);
   background-attachment: fixed;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 768px) {
+  footer.contact-footer {
+    background-attachment: scroll;
+    height: 50rem;
+  }
 }
 
 footer.contact-footer .last-sentence {
@@ -2356,6 +2386,10 @@ h1#logo.animated #goutte2 {
   animation-timing-function: ease;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+.ico {
+  font-family: 'icomoon';
 }
 
 @-webkit-keyframes bounce {

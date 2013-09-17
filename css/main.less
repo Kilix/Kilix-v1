@@ -186,6 +186,12 @@ textarea {
         background-color:transparent
     }
 } 
+
+.ie9 .lead-text{ margin-left:-50rem; margin-top: -14rem;}
+.ie9 .team-container label span {width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: white; text-indent:-5000px; filter : alpha(opacity=0);
+    opacity : 0;}
+
+
 body{
     text-align: center;
     font-family: @text-font, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -1743,6 +1749,7 @@ section.categories{
                 transform-style: preserve-3d;
                 backface-visibility: hidden;
                 z-index: 1;
+                visibility: hidden;
                 p{
                     margin: 0 10%;
                     height: 100%;
@@ -1789,6 +1796,10 @@ section.categories{
                 z-index: 999;
                 cursor: pointer;
                 z-index:1000;
+
+                span{
+                    text-indent: -5000px; display: inline-block;
+                }
             }
             input:checked ~ .front
             {
@@ -1875,12 +1886,9 @@ section.categories{
 
             @media only screen and (max-width: 768px){
                 article{
-                    figure{
-                        opacity:0.6!important;
-                    }
                     aside{
                         transform: rotateY(0deg) translateY(0px)!important;
-                        opacity: 1!important;
+                        opacity: 0!important;
                     }
 
                 }
@@ -1921,7 +1929,6 @@ section.categories{
         }
         
         .content{
-            pointer-events:none;
         }
 
         a.discover{
@@ -1940,6 +1947,12 @@ section.categories{
             padding-bottom: 33.3%;
             background: url('../img/references.png');
             background-size: 300%;
+
+            transition: 0.5s;
+ 
+            &:hover{
+                background-color: rgba(0,0,0,0.1);
+            }
 
             @media only screen and (max-width: 768px){
                 padding-bottom: 50%;
@@ -1990,9 +2003,15 @@ section.categories{
 }
 
 footer.contact-footer{
-    height:50rem;
-    background:url('../img/black_lozenge.png');
+    height:70rem;
+    background: url(../img/background-end.JPG);
     background-attachment: fixed;
+    background-size: cover;
+ 
+    @media only screen and (max-width: 768px){
+        background-attachment: scroll;
+        height:50rem;
+    }
     
     .last-sentence{
         position: fixed;
@@ -2101,6 +2120,10 @@ h1#logo.animated{
        animation-timing-function: ease;
        animation-iteration-count: infinite
     }
+    }
+ 
+.ico{
+    font-family: 'icomoon';
 }
 
 @keyframes bounce{

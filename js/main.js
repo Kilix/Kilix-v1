@@ -157,7 +157,7 @@ var Kilix = {
             
             $('html,body').animate({
                 scrollTop: gohere
-            }, 2000);
+            }, 1000);
         });
         $('#logo').on('click',function(e){
 
@@ -170,7 +170,7 @@ var Kilix = {
             e.preventDefault();
             $('html,body').animate({
                 scrollTop: $('.❤[data-slide="1"]').offset().top
-            }, 2000);
+            }, 3500);
         });
         $('.mobile-close, .unfold').on('click', function(e){
             e.preventDefault();
