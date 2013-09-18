@@ -10,8 +10,7 @@ textarea {
 }
 html{
     font-size: 62.5%;
-    overflow-x: hidden!important;   
-    
+
     @media only screen and (max-width: 768px){
         font-size: 50%;
     }
@@ -196,7 +195,6 @@ textarea {
 body{
     text-align: center;
     font-family: @text-font, Arial, "Helvetica Neue", Helvetica, sans-serif;
-    overflow-x: hidden!important;   
     color: rgba(34, 34, 34, 0.5);
     height:auto!important;
     
@@ -300,6 +298,7 @@ body{
 }
 section.outer-body-wrapper{
     position: relative;
+    overflow: hidden;
 }
 section.body-wrapper{
     background:white;
@@ -308,6 +307,7 @@ section.body-wrapper{
     transition: 0.5s cubic-bezier(0.09, 0.68, 0, 0.99);
     transition-delay: 0.1s;
     transform:translateX(0);
+    overflow: hidden;
 }
 .height-full-centered{
     height:900px; //dynamic

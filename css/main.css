@@ -14,7 +14,6 @@ textarea {
 
 html {
   font-size: 62.5%;
-  overflow-x: hidden!important;
 }
 
 @media only screen and (max-width: 768px) {
@@ -148,7 +147,6 @@ textarea {
 body {
   text-align: center;
   font-family: 'Open Sans', Arial, "Helvetica Neue", Helvetica, sans-serif;
-  overflow-x: hidden!important;
   color: rgba(34, 34, 34, 0.5);
   height: auto!important;
 }
@@ -301,6 +299,7 @@ body.push-right .menu {
 
 section.outer-body-wrapper {
   position: relative;
+  overflow: hidden;
 }
 
 section.body-wrapper {
@@ -314,6 +313,7 @@ section.body-wrapper {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
+  overflow: hidden;
 }
 
 .height-full-centered {
