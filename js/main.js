@@ -99,7 +99,7 @@ var Kilix = {
         }
     },
     nav: function(){
-        var links = $('.menu li[data-slide], .mobile-nav li');
+        var links = $('.nav li[data-slide], .mobile-nav li');
         var slide = $('.❤');
         slide.waypoint({
             handler: function ( direction) {
@@ -148,16 +148,22 @@ var Kilix = {
         
         links.on('click', function (e) {
             e.preventDefault();
+
+            var $this = $(this);
+
             dataslide = $(this).attr('data-slide');
-            
             var gohere = $('.❤[data-slide="' + dataslide + '"]').offset().top  - $('.menu').height() +5;
             if(dataslide == 1) gohere = $('.❤[data-slide="' + dataslide + '"]').offset().top;
             
-            if($(this).parent().hasClass('mobile'))$('.mobile-close').trigger('click');
+            if($this.parent().hasClass('mobile')){
+                    $('nav.mobile-nav').toggleClass('open');
+                    $('body').toggleClass('push-left').toggleClass('nope');
+                }
             
             $('html,body').animate({
                 scrollTop: gohere
-            }, 1000);
+            }, 1000, function(){
+            });
         });
         $('#logo').on('click',function(e){
 
